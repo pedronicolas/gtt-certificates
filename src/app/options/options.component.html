@@ -1,0 +1,45 @@
+<navbarprincipal></navbarprincipal>
+<div class="info">
+ <strong> Nombre de Usuario: </strong> 
+ <i> {{user.username}} </i>
+</div>  
+<div>  
+<strong> Rol: </strong>
+<i>{{user.role === 1 ? 'User': 'Admin'}}</i>
+</div>
+
+<form (submit)=addJiraSetings()>
+<div>
+  Nombre de usuario Jira 
+</div>
+  <div>
+    <input type="text" placeholder="Nombre de Usuario Jira" [(ngModel)]="usernameJira" name="usernameJira">
+  </div>
+  <div>
+    Contraseña Jira 
+  </div>
+  <div>  
+<input type="password" placeholder="Contraseña" [(ngModel)]="pass" name="pass">
+</div>  
+<div>
+  Proyecto  
+</div>
+<div>
+<input type="text" placeholder="Proyecto" [(ngModel)]="proyect" name="proyect">
+</div>  
+<div>
+  Componente  
+</div>
+<div>
+  <input type="text" placeholder="Componente" [(ngModel)]="component" name="component">
+</div>  
+<div>
+  Url  
+</div>
+<div>
+<input type="text" placeholder="Url" [(ngModel)]="url" name="url">
+</div>
+<div>  
+<input type="submit" value="Confirmar Cambios" >
+</div>
+</form>

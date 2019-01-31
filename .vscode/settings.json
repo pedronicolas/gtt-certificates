@@ -1,0 +1,5 @@
+{
+    "editor.fontFamily": "Monaco,Consolas, 'Courier New', monospace",
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 2000
+}
