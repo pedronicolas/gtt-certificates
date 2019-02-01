@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApibackendService } from '../apibackend.service';
 import { LoginViewComponent } from '../login-view/login-view.component';
-import { User } from '../model-data';
+import { User, Jira } from '../model-data';
 
 @Component({
   selector: 'app-options',
@@ -10,6 +10,7 @@ import { User } from '../model-data';
 })
 export class OptionsComponent implements OnInit {
   user:User;
+  jira:Jira;
 
   constructor(private api:ApibackendService) { }
 
@@ -31,6 +32,10 @@ export class OptionsComponent implements OnInit {
   
   ngOnInit() {
     this.getUserInfo();  
+  }
+
+  addJiraSettings(){
+    
   }
 
 }
