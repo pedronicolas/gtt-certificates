@@ -7,10 +7,11 @@ form{
     
     input{
         all:unset;
+        text-align: center;
         border-bottom: 1px solid black;
         margin: 1em 0;
         max-width: 200px;
-        color: white;
+        color: black;
        
     }
     [type="submit"]{

@@ -8,9 +8,10 @@ form{
     input{
         all:unset;
         border-bottom: 1px solid black;
+        text-align: center;
         margin: 1em 0;
         max-width: 200px;
-        color: white;
+        color: black;
        
     }
     [type="submit"]{
