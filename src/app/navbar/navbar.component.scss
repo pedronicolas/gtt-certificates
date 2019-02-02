@@ -5,9 +5,9 @@ nav{
     align-items: center;
     background: linear-gradient(to right,rgb(10, 133, 47),rgb(117, 238, 117));
     border-radius: 2em;
+    border: 0.1em solid black;
     div{
         all: unset;
-        // border-radius: 0.3em;
         margin: 1em;
         color: black;
         align-content: center;
@@ -15,7 +15,11 @@ nav{
             color: white;
         }
     a{
+        border-radius: 2em;
+        
+        background-color: white; 
         margin: 1em;
+        border: 0.15em solid grey;
         color: black;
         align-content: center;
         

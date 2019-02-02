@@ -5,6 +5,7 @@ nav#principal{
     align-items: center;
     background: linear-gradient(to right,rgb(10, 133, 47),rgb(117, 238, 117));
     border-radius: 2em;
+    border: 0.1em solid black;
 }
 
 img{
@@ -14,7 +15,9 @@ img{
 select{
   all: unset;
   text-align: center;
+  background: white;
+  color: black;
   border-radius: 2em;
-  border: solid grey 0.3em;
-  color: grey; 
+  border: solid grey 0.15em;
+  
 }
