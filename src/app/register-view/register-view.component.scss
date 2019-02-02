@@ -10,15 +10,14 @@ form{
         border-bottom: 1px solid black;
         margin: 1em 0;
         max-width: 200px;
-        color: black;
+        color: white;
        
     }
     [type="submit"]{
-        border:0.5em;
-        background:grey;
-        :hover{
-            border-radius: 3em;
-        }
+        border:0.2em solid grey;
+        background:white;
+        color: black;
+        border-radius: 1em;
     }
 
 
