@@ -29,7 +29,9 @@ form{
     }
     [type="submit"]{
         border:0.5em;
-        background:grey;
+        border-radius: 2em;
+        border: solid grey 0.3em; 
+        background:white;
         :hover{
             border-radius: 3em;
         }

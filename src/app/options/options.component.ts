@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ApibackendService } from '../apibackend.service';
-import { LoginViewComponent } from '../login-view/login-view.component';
 import { User, Jira } from '../model-data';
 
 @Component({
@@ -12,6 +11,7 @@ export class OptionsComponent implements OnInit {
   user:User;
   jira:Jira;
   username;
+  role;
   constructor(private api:ApibackendService) { }
 
   getUserInfo(){
@@ -20,8 +20,11 @@ export class OptionsComponent implements OnInit {
     this.api.getUserInfo(localStorage.getItem('id'))
       .then((result:any)=>{
         this.user = result;
+
         console.log('aceptado');
-        this.username = this.user.username;
+        this.username = result.username;
+        this.role = result.role;
+
         console.log(this.username);
 
       }).catch(error=>{

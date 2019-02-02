@@ -1,11 +1,11 @@
 <navbarprincipal></navbarprincipal>
 <div class="info">
  <strong> Nombre de Usuario: </strong> 
- <i> {{this.user.username}} </i>
+ <p> {{username}} </p>
 </div>  
 <div>  
 <strong> Rol: </strong>
-<i>{{this.user.role === 1 ? 'User': 'Admin'}}</i>
+<i>{{role === 1 ? 'User': 'Admin'}}</i>
 </div>
 
 <form (submit)= addUserJiraInfo()>
@@ -40,6 +40,6 @@
 <input type="text" placeholder="Url" [(ngModel)]="this.jira.url" name="this.jira.url">
 </div>
 <div>  
-<input type="submit" value="Confirmar Cambios" >
+<input type="submit" value="  Confirmar Cambios  " >
 </div>
 </form>
