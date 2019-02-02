@@ -11,7 +11,7 @@ import { User, Jira } from '../model-data';
 export class OptionsComponent implements OnInit {
   user:User;
   jira:Jira;
-
+  username;
   constructor(private api:ApibackendService) { }
 
   getUserInfo(){
@@ -21,21 +21,27 @@ export class OptionsComponent implements OnInit {
       .then((result:any)=>{
         this.user = result;
         console.log('aceptado');
-        
+        this.username = this.user.username;
+        console.log(this.username);
 
       }).catch(error=>{
         console.log(error);
-      })
-      
+      }) 
   
+  }
+
+  addUserJiraInfo(){
+    this.jira.user_id = this.user.id;
+    this.api.addUserJiraInfo(this.jira).then(res=>{
+      console.log(res);
+    }).catch(err=>{
+      console.log(err);
+    })
   }
   
   ngOnInit() {
     this.getUserInfo();  
   }
 
-  addJiraSettings(){
-    
-  }
 
 }

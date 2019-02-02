@@ -1,43 +1,43 @@
 <navbarprincipal></navbarprincipal>
 <div class="info">
  <strong> Nombre de Usuario: </strong> 
- <i> {{user.username}} </i>
+ <i> {{username}} </i>
 </div>  
 <div>  
 <strong> Rol: </strong>
-<i>{{user.role === 1 ? 'User': 'Admin'}}</i>
+<i>{{this.user.role === 1 ? 'User': 'Admin'}}</i>
 </div>
 
-<form (submit)=addJiraSetings()>
+<form (submit)= addUserJiraInfo()>
 <div>
   Nombre de usuario Jira 
 </div>
   <div>
-    <input type="text" placeholder="Nombre de Usuario Jira" [(ngModel)]="jira.username" name="jira.username">
+    <input type="text" placeholder="Nombre de Usuario Jira" [(ngModel)]="this.jira.username" name="this.jira.username">
   </div>
   <div>
     Contraseña Jira 
   </div>
   <div>  
-<input type="password" placeholder="Contraseña" [(ngModel)]="jira.pass" name="jira.pass">
+<input type="password" placeholder="Contraseña" [(ngModel)]="this.jira.pass" name="this.jira.pass">
 </div>  
 <div>
   Proyecto  
 </div>
 <div>
-<input type="text" placeholder="Proyecto" [(ngModel)]="jira.proyect" name="jira.proyect">
+<input type="text" placeholder="Proyecto" [(ngModel)]="this.jira.proyect" name="this.jira.proyect">
 </div>  
 <div>
   Componente  
 </div>
 <div>
-  <input type="text" placeholder="Componente" [(ngModel)]="jira.component" name="jira.component">
+  <input type="text" placeholder="Componente" [(ngModel)]="this.jira.component" name="this.jira.component">
 </div>  
 <div>
   Url  
 </div>
 <div>
-<input type="text" placeholder="Url" [(ngModel)]="jira.url" name="jira.url">
+<input type="text" placeholder="Url" [(ngModel)]="this.jira.url" name="this.jira.url">
 </div>
 <div>  
 <input type="submit" value="Confirmar Cambios" >
