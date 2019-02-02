@@ -8,10 +8,15 @@ import { User, Jira } from '../model-data';
   styleUrls: ['./options.component.scss']
 })
 export class OptionsComponent implements OnInit {
-  user:User;
-  jira:Jira;
-  username;
-  role;
+  // user:User;
+   jira:any;
+  username:string;
+  role:string;
+  usernamejira;
+  pass;
+  proyect;
+  component;
+  url;
   constructor(private api:ApibackendService) { }
 
   getUserInfo(){
@@ -19,13 +24,11 @@ export class OptionsComponent implements OnInit {
     
     this.api.getUserInfo(localStorage.getItem('id'))
       .then((result:any)=>{
-        this.user = result;
-
         console.log('aceptado');
         this.username = result.username;
         this.role = result.role;
 
-        console.log(this.username);
+        
 
       }).catch(error=>{
         console.log(error);
@@ -34,9 +37,16 @@ export class OptionsComponent implements OnInit {
   }
 
   addUserJiraInfo(){
-    this.jira.user_id = this.user.id;
-    this.api.addUserJiraInfo(this.jira).then(res=>{
-      console.log(res);
+    this.jira = {
+      username: this.usernamejira,
+      pass: this.pass,
+      proyect:this.proyect,
+      component:this.component,
+      url: this.url,
+      user_id: localStorage.getItem('id') 
+    }
+    this.api.addUserJiraInfo(this.jira).then((res:any)=>{
+      console.log(res.status);
     }).catch(err=>{
       console.log(err);
     })
