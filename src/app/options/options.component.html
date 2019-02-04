@@ -7,34 +7,35 @@
 <strong> Rol: </strong>
 <i>{{role === 1 ? 'User': 'Admin'}}</i>
 </div>
-
-<form (submit)= "addUserJiraInfo()">
+<div id="shutup">
+<div id="formulario">
+<form (submit)= "sendUserJiraInfo()">
 <div>
-  Nombre de usuario Jira 
+ <strong>Nombre de usuario Jira</strong>  
 </div>
   <div>
     <input type="text" placeholder="Nombre de Usuario Jira" [(ngModel)]="usernamejira" name="usernamejira">
   </div>
   <div>
-    Contraseña Jira 
+    <strong>Contraseña Jira</strong>  
   </div>
   <div>  
 <input type="password" placeholder="Contraseña" [(ngModel)]="pass" name="pass">
 </div>  
 <div>
-  Proyecto  
+  <strong>Proyecto</strong>   
 </div>
 <div>
 <input type="text" placeholder="Proyecto" [(ngModel)]="proyect" name="proyect">
 </div>  
 <div>
-  Componente  
+  <strong>Componente</strong>   
 </div>
 <div>
   <input type="text" placeholder="Componente" [(ngModel)]="component" name="component">
 </div>  
 <div>
-  Url  
+  <strong>Url</strong>   
 </div>
 <div>
 <input type="text" placeholder="Url" [(ngModel)]="url" name="url">
@@ -43,3 +44,5 @@
 <input type="submit" value="  Confirmar Cambios  " >
 </div>
 </form>
+</div>
+</div>

@@ -9,7 +9,8 @@ import { User, Jira } from '../model-data';
 })
 export class OptionsComponent implements OnInit {
   // user:User;
-   jira:any;
+  jira:any;
+  hasJiraInfo   = false;
   username:string;
   role:string;
   usernamejira;
@@ -35,7 +36,32 @@ export class OptionsComponent implements OnInit {
       }) 
   
   }
+  sendUserJiraInfo(){
+    if (this.hasJiraInfo) {
+      this.modifyUserJiraInfo();
+    } else {
+      
+      this.addUserJiraInfo();
+     this.hasJiraInfo = true;
+    }
+  }
 
+  modifyUserJiraInfo(){
+    console.log('entro aquí');
+    this.jira = {
+      username: this.usernamejira,
+      pass: this.pass,
+      proyect:this.proyect,
+      component:this.component,
+      url: this.url,
+      user_id: localStorage.getItem('id') 
+    }
+    this.api.modifyUserJiraInfo(this.jira).then((res:any)=>{
+      console.log(res);
+    })
+  }
+  
+  
   addUserJiraInfo(){
     this.jira = {
       username: this.usernamejira,
@@ -52,10 +78,24 @@ export class OptionsComponent implements OnInit {
     })
   }
   
+  
   ngOnInit() {
     this.api.isLogged();
-    this.getUserInfo();  
-  }
 
+    this.getUserInfo();
+    
+    this.api.getJiraInfo()
+    .then((res:any)=>{
+      if(res !== null){
+      this.hasJiraInfo = true;
+      this.usernamejira = res.username;
+      this.pass = res.pass;
+      this.proyect = res.proyect;
+      this.component = res.component;
+      this.url = res.url;
+      }
+    })
+
+  }
 
 }

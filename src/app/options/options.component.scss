@@ -25,6 +25,7 @@ form{
         margin: 1em 0;
         max-width: 200px;
         color: black;
+        text-align: center;
        
     }
     [type="submit"]{
@@ -33,10 +34,27 @@ form{
         padding: 0.25em;
         border: solid grey 0.3em; 
         background:white;
-        :hover{
-            border-radius: 3em;
-        }
+        
     }
 
 
 }
+
+:hover{
+        background: solid green;
+
+}
+
+div#shutup{
+    display: flex;
+    justify-content: center;
+}
+div#formulario{
+    display: flex; 
+    padding: 1em;
+    background: white;
+    border-radius: 2.5em;
+    margin: 0em;
+    
+   
+    }

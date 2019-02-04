@@ -15,6 +15,7 @@ export class ApibackendService {
   auth: string = 'api/auth';
   jira: string = 'api/jira';
   authorization:string = `Bearer: ${this.jwt}`;
+  
 
   constructor(private http:HttpClient, private router:Router) { }
   
@@ -45,6 +46,10 @@ export class ApibackendService {
   addUserJiraInfo(jira:Jira ){
     return this.http.post(this.jira,jira).toPromise();
   }
+
+  modifyUserJiraInfo(jira:Jira){
+    return this.http.put(this.jira+ '/'+ localStorage.getItem('id'),jira ).toPromise();
+  }
   
   isLogged(){
     if(!localStorage.getItem('jwt')|| localStorage.getItem('jwt')==='-1'){
@@ -52,4 +57,8 @@ export class ApibackendService {
     }
   }
 
+   getJiraInfo(){
+   
+     return this.http.get(this.jira +"/"+ localStorage.getItem('id')).toPromise();
+   }
 }
