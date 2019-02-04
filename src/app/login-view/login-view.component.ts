@@ -13,6 +13,7 @@ export class LoginViewComponent{
   password:string;
   jwt :string;
   userId:number;
+  comment:any;
   constructor(private api: ApibackendService, private router: Router) { }
 
 
@@ -22,7 +23,12 @@ export class LoginViewComponent{
       this.api.login(username.trim(),password.trim())
       .then((response:any)=>{
         console.log(response);
-        this.router.navigate(['/home']);
+        console.log(this.comment);
+        if(response.status===204){ 
+        this.comment = response.comment;
+        } else{
+          this.router.navigate(['/home']);
+        }
         localStorage.setItem('jwt',response.jwt);
         localStorage.setItem('id',response.id_user);
         this.jwt = response.jwt;

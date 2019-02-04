@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApibackendService } from '../apibackend.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register-view',
@@ -12,7 +13,7 @@ export class RegisterViewComponent {
   valid:any;
   error:any;
   correct:any;
-  constructor(private api: ApibackendService) { }
+  constructor(private api: ApibackendService, private router:Router) { }
 
   register(){
     const {username,password} = this;
@@ -22,6 +23,9 @@ export class RegisterViewComponent {
          this.valid = res;
          this.correct = res.comment; 
          console.log(res);
+         setTimeout(()=>{
+          this.router.navigate(['/login']);
+         },2000)
        })
        .catch(error=>{
          this.error = error;

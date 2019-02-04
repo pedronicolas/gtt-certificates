@@ -6,6 +6,10 @@
     <input type="submit" value="Register" >
   </form>
 
-  <div>
+  <div *ngIf="correct">
     {{correct}}
+    <div>
+      Serás redireccionado al Login en breve. También puedes hacerlo tú desde el botón.
+    </div>
+    <button routerLink="/login" >Ve al Login</button>
   </div>
