@@ -47,7 +47,7 @@ export class ApibackendService {
   }
   
   isLogged(){
-    if(!localStorage.getItem('jwt')){
+    if(!localStorage.getItem('jwt')|| localStorage.getItem('jwt')==='-1'){
       this.router.navigate(['/login']);
     }
   }

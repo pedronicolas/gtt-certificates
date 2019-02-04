@@ -11,14 +11,16 @@ export class RegisterViewComponent {
   password:string;
   valid:any;
   error:any;
+  correct:any;
   constructor(private api: ApibackendService) { }
 
   register(){
     const {username,password} = this;
      if(username.trim()!== '' && password.trim()!==''){
        this.api.register(username.trim(),password.trim())
-       .then(res=>{
+       .then((res:any)=>{
          this.valid = res;
+         this.correct = res.comment; 
          console.log(res);
        })
        .catch(error=>{
