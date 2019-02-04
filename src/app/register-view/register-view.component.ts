@@ -13,6 +13,7 @@ export class RegisterViewComponent {
   valid:any;
   error:any;
   correct:any;
+  aceptado:string = "Registro realizado correctamente";
   constructor(private api: ApibackendService, private router:Router) { }
 
   register(){
@@ -23,10 +24,12 @@ export class RegisterViewComponent {
          this.valid = res;
          this.correct = res.comment; 
          console.log(res);
-         setTimeout(()=>{
-          this.router.navigate(['/login']);
-         },2000)
-       })
+        if(this.correct === this.aceptado){
+          setTimeout(()=>{
+            this.router.navigate(['/login']);
+           },5000)
+   
+        }   })
        .catch(error=>{
          this.error = error;
          console.log(error);

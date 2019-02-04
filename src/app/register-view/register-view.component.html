@@ -1,15 +1,19 @@
 <navbar></navbar>
 
-<form (submit)=register()>
+<div id="formulario" (keyup.enter)="register()">
     <input type="text" placeholder="Nombre de usuario" [(ngModel)]="username" name="username">
     <input type="password" placeholder="Contraseña" [(ngModel)]="password"name="password">
-    <input type="submit" value="Register" >
-  </form>
+    <button (click)="register()">Register</button>
+  </div>
 
-  <div *ngIf="correct">
+  <div *ngIf="correct === aceptado">
     {{correct}}
     <div>
       Serás redireccionado al Login en breve. También puedes hacerlo tú desde el botón.
     </div>
     <button routerLink="/login" >Ve al Login</button>
   </div>
+
+  <div *ngIf="correct !== aceptado">
+      {{correct}}
+ </div>

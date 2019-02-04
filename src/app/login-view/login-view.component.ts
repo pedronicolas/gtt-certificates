@@ -38,11 +38,5 @@ export class LoginViewComponent{
       .catch(console.log);
     }
   }
-  logOut(){
-    localStorage.clear();
-    this.jwt = null;
-    this.userId = -1;
-    this.router.navigate[('/login')];
-  }
- 
+  
 }

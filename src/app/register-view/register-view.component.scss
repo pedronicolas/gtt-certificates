@@ -1,4 +1,4 @@
-form{
+div#formulario{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,7 +14,7 @@ form{
         color: black;
        
     }
-    [type="submit"]{
+    button{
         border:0.2em solid grey;
         background:white;
         padding: 0.25em;
@@ -27,4 +27,12 @@ form{
 div{
     text-align: center;
     color: green;
+}
+
+button{
+    border:0.2em solid grey;
+    background:white;
+    padding: 0.25em;
+    color: black;
+    border-radius: 1em;
 }
