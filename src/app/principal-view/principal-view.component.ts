@@ -22,7 +22,7 @@ export class PrincipalViewComponent implements OnInit {
   }
 
   ngOnInit() {
-    
+    this.api.isLogged();
   }
 
 }

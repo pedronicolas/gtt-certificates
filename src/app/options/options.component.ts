@@ -53,6 +53,7 @@ export class OptionsComponent implements OnInit {
   }
   
   ngOnInit() {
+    this.api.isLogged();
     this.getUserInfo();  
   }
 

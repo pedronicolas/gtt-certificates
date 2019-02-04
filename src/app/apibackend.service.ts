@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { LoginViewComponent } from './login-view/login-view.component';
 import { Jira, User } from './model-data';
+import { Local } from 'protractor/built/driverProviders';
 
 
 @Injectable({
@@ -43,6 +44,12 @@ export class ApibackendService {
 
   addUserJiraInfo(jira:Jira ){
     return this.http.post(this.jira,jira).toPromise();
+  }
+  
+  isLogged(){
+    if(!localStorage.getItem('jwt')){
+      this.router.navigate(['/login']);
+    }
   }
 
 }
