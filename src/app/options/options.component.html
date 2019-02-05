@@ -1,15 +1,17 @@
 <navbarprincipal></navbarprincipal>
-<div class="info">
- <strong> Nombre de Usuario: </strong> 
- <i> {{username}} </i>
-</div>  
-<div>  
-<strong> Rol: </strong>
-<i>{{role === 1 ? 'User': 'Admin'}}</i>
+<div id="info">
+ <div>
+    <strong> Nombre de Usuario: </strong> 
+    <i> {{username}} </i>
+  </div>
+ <div>
+    <strong> Rol: </strong>
+    <i>{{role === 1 ? 'User': 'Admin'}}</i>
+  </div>
 </div>
 <div id="shutup">
 <div id="formulario">
-<form (submit)= "sendUserJiraInfo()">
+<form (submit)= "sendUserJiraInfo()" (keyup.enter) = "sendUserJiraInfo()" >
 <div>
  <strong>Nombre de usuario Jira</strong>  
 </div>
@@ -41,7 +43,7 @@
 <input type="text" placeholder="Url" [(ngModel)]="url" name="url">
 </div>
 <div>  
-<input type="submit" value="  Confirmar Cambios  " >
+<button id="button" (click) = "sendUserJiraInfo()">Confirmar Cambios</button>
 </div>
 </form>
 </div>

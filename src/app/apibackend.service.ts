@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { LoginViewComponent } from './login-view/login-view.component';
 import { Jira, User } from './model-data';
-import { Local } from 'protractor/built/driverProviders';
 
 
 @Injectable({

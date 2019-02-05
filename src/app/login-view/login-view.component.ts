@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
 })
 export class LoginViewComponent{
   username:string;
+  usernamee;
+  passworde;
   password:string;
   jwt :string;
   userId:number;

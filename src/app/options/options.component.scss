@@ -2,15 +2,18 @@ div{
     display: flex;
 }
 
-
 div#info{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        align-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 }
 
+input#id{
+    :hover{
+        background: red;
+    }
+}
 
 form{
     display: flex;
@@ -28,22 +31,15 @@ form{
         text-align: center;
        
     }
-    [type="submit"]{
-        border:0.5em;
-        border-radius: 2em;
-        padding: 0.25em;
-        border: solid grey 0.3em; 
-        background:white;
+    
         
-    }
+        
+    
 
 
 }
 
-:hover{
-        background: solid green;
 
-}
 
 div#shutup{
     display: flex;
@@ -57,4 +53,11 @@ div#formulario{
     margin: 0em;
     
    
-    }
+}
+button{
+        border:0.5em;
+        border-radius: 2em;
+        padding: 0.25em;
+        border: solid grey 0.3em; 
+        background:linear-gradient(to right,rgb(10, 133, 47),rgb(117, 238, 117));;;
+}        

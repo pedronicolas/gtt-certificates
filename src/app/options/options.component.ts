@@ -10,7 +10,7 @@ import { User, Jira } from '../model-data';
 export class OptionsComponent implements OnInit {
   // user:User;
   jira:any;
-  hasJiraInfo   = false;
+  hasJiraInfo = false;
   username:string;
   role:string;
   usernamejira;
