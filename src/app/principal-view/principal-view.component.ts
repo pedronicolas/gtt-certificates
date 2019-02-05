@@ -12,18 +12,28 @@ export class PrincipalViewComponent implements OnInit {
   idUser = this.login.userId;
   username:string;
   role:any;
-  
+  certificates;
+
   constructor(private api:ApibackendService,private login:LoginViewComponent) { }
 
   getUserInfo(){
-    this.api.getUserInfo(this.idUser)
-
-    
-    
+    this.api.getUserInfo(this.idUser);
   }
+
+  getCertificates(){
+    this.api.getCertificates().then((res:any)=>{
+      this.certificates = res;
+    }).catch((err:any)=>{
+      console.log(err);
+    })
+  }
+
+
+
 
   ngOnInit() {
     this.api.isLogged();
+    this.getCertificates();
   }
 
 }

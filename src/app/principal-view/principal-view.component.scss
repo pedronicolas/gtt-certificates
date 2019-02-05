@@ -16,7 +16,8 @@ div{
 .certificados{
     margin: 4vh;
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(5,1fr);
+    
     
     div{
         border: 3px solid green;
@@ -25,13 +26,30 @@ div{
     }
 }
 
-.certificados-for{
+.certificados-item{
+    display: contents;
+    
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    
+
+    
+}
+
+.certificados-body{
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    margin:4vh;
+    max-height: 300px;
+    overflow: auto;
+    
+    grid-template-columns: repeat(5,1fr);
     div{
+        height: 3em;
         border: 3px solid green;
         background: white;
         border: 2px solid black; 
     }
 }
- 

@@ -12,6 +12,7 @@ export class ApibackendService {
   user: string = 'api/users';
   auth: string = 'api/auth';
   jira: string = 'api/jira';
+  certificates: string = 'api/certificates';
   authorization:string = `Bearer: ${this.jwt}`;
   
 
@@ -30,7 +31,7 @@ export class ApibackendService {
         .toPromise();
         
 
-    }
+  }
 
   logOut(){
     localStorage.clear();
@@ -56,7 +57,11 @@ export class ApibackendService {
   }
 
    getJiraInfo(){
-   
      return this.http.get(this.jira +"/"+ localStorage.getItem('id')).toPromise();
    }
+
+   getCertificates(){
+    return this.http.get(this.certificates).toPromise();
+   }
+
 }

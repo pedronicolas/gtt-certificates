@@ -18,9 +18,32 @@
     <div>
         NOMBRE CLIENTE
     </div>
+    <div>
+        OPCIONES
+    </div>
 
  </div>
 
- <div class="certificados-for" *ngFor="">
+<div class="certificados-body">
+ <div class="certificados-item" *ngFor="let certificados of certificates">
+    <div>
+        {{certificados.alias}}
+    </div>
 
+    <div>
+        {{certificados.entidadEmisora}}
+    </div>
+    <div>
+        {{certificados.fechaCaducidad}}
+    </div>
+    <div>
+        {{certificados.nombreCliente}}
+    </div>
+    <div class="buttons">
+        <button (click)="isDeleted()">❌</button>
+        <button (click)="goDetails()">📑</button>
+       
+        
+    </div>
  </div>
+</div>
