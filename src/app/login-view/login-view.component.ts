@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ApibackendService } from '../apibackend.service';
 import { Router } from '@angular/router';
 
@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   templateUrl: './login-view.component.html',
   styleUrls: ['./login-view.component.scss']
 })
-export class LoginViewComponent{
+export class LoginViewComponent implements OnInit{
   username:string;
   usernamee;
   passworde;
@@ -39,6 +39,10 @@ export class LoginViewComponent{
       })
       .catch(console.log);
     }
+  }
+
+  ngOnInit(){
+    this.api.isLogged();
   }
   
 }

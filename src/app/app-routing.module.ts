@@ -19,7 +19,7 @@ const routes: Routes = [{
 },
 {
   path: '', 
-  component: LoginViewComponent
+  component: PrincipalViewComponent
 },
 {
   path: 'home',

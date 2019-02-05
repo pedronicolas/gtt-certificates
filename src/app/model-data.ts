@@ -17,3 +17,8 @@ export interface Jira{
     user_id: number
 
 }
+
+export interface Certificados{
+    id:number,
+    
+}

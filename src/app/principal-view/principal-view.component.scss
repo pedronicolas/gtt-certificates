@@ -12,4 +12,26 @@ div{
 
     }
 }
+
+.certificados{
+    margin: 4vh;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    
+    div{
+        border: 3px solid green;
+        background: linear-gradient(to right,rgb(10, 133, 47),rgb(117, 238, 117));
+        border: 2px solid black;
+    }
+}
+
+.certificados-for{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    div{
+        border: 3px solid green;
+        background: white;
+        border: 2px solid black; 
+    }
+}
  
