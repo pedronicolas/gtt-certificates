@@ -4,6 +4,7 @@ import { LoginViewComponent } from './login-view/login-view.component';
 import { RegisterViewComponent } from './register-view/register-view.component';
 import { PrincipalViewComponent } from './principal-view/principal-view.component';
 import { OptionsComponent } from './options/options.component';
+import { AddfilesComponent } from './addfiles/addfiles.component';
 
 const routes: Routes = [{
   path: 'login', 
@@ -24,6 +25,10 @@ const routes: Routes = [{
 {
   path: 'home',
   component: PrincipalViewComponent
+},
+{
+  path:'upload',
+  component: AddfilesComponent
 },
 {
   path: '**', 

@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PrincipalViewComponent } from './principal-view/principal-view.component';
 import { NavbarprincipalComponent } from './navbarprincipal/navbarprincipal.component';
 import { OptionsComponent } from './options/options.component';
+import { AddfilesComponent } from './addfiles/addfiles.component';
  
 
 @NgModule({
@@ -21,7 +22,8 @@ import { OptionsComponent } from './options/options.component';
     NavbarComponent,
     PrincipalViewComponent,
     NavbarprincipalComponent,
-    OptionsComponent
+    OptionsComponent,
+    AddfilesComponent
   ],
   imports: [
     BrowserModule,
