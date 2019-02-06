@@ -33,6 +33,7 @@ export class LoginViewComponent implements OnInit{
         }
         localStorage.setItem('jwt',response.jwt);
         localStorage.setItem('id',response.id_user);
+        localStorage.setItem('rol',response.role);
         this.jwt = response.jwt;
         this.userId = response.id_user;
 

@@ -18,6 +18,7 @@ export class OptionsComponent implements OnInit {
   proyect;
   component;
   url;
+  issue;
   constructor(private api:ApibackendService) { }
 
   getUserInfo(){
@@ -69,7 +70,8 @@ export class OptionsComponent implements OnInit {
       proyect:this.proyect,
       component:this.component,
       url: this.url,
-      user_id: localStorage.getItem('id') 
+      user_id: localStorage.getItem('id')
+
     }
     this.api.addUserJiraInfo(this.jira).then((res:any)=>{
       console.log(res.status);
@@ -93,6 +95,7 @@ export class OptionsComponent implements OnInit {
       this.proyect = res.proyect;
       this.component = res.component;
       this.url = res.url;
+      this.issue = res.issue_type;
       }
     })
 

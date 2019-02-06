@@ -7,29 +7,25 @@ import { Router } from '@angular/router';
   templateUrl: './register-view.component.html',
   styleUrls: ['./register-view.component.scss']
 })
-export class RegisterViewComponent {
+export class RegisterViewComponent implements OnInit {
   username:string;
   password:string;
   valid:any;
   error:any;
   correct:any;
   aceptado:string = "Registro realizado correctamente";
-  constructor(private api: ApibackendService, private router:Router) { }
+  rol = 1;
+  constructor(private api: ApibackendService, private router:Router ) { }
 
   register(){
-    const {username,password} = this;
+    const {username,password,rol} = this;
      if(username.trim()!== '' && password.trim()!==''){
-       this.api.register(username.trim(),password.trim())
+       this.api.register(username.trim(),password.trim(),this.rol)
        .then((res:any)=>{
          this.valid = res;
          this.correct = res.comment; 
          console.log(res);
-        if(this.correct === this.aceptado){
-          setTimeout(()=>{
-            this.router.navigate(['/login']);
-           },5000)
-   
-        }   })
+         })
        .catch(error=>{
          this.error = error;
          console.log(error);
@@ -37,5 +33,7 @@ export class RegisterViewComponent {
        })
      }
    }
-
+   ngOnInit(){
+     this.api.isRoleZero();
+   }
 }

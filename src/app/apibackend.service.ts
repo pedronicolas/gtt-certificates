@@ -19,10 +19,10 @@ export class ApibackendService {
   constructor(private http:HttpClient, private router:Router) { }
   
 
-  register(username:string, password:string){
+  register(username:string, password:string,role){
     console.log("cipoEntra");
-    
-    return this.http.post(this.user,{username,password})
+      console.log(role);
+    return this.http.post(this.user,{username,password,role})
      .toPromise();
   }
 
@@ -62,6 +62,12 @@ export class ApibackendService {
 
    getCertificates(){
     return this.http.get(this.certificates).toPromise();
+   }
+   isRoleZero(){
+     if(localStorage.getItem('rol')==='1'){
+       alert('No tienes permisos suficientes para acceder aquí');
+       this.router.navigate(['/home']);
+     }
    }
 
 }

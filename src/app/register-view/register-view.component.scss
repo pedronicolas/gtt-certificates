@@ -21,7 +21,12 @@ div#formulario{
         color: black;
         border-radius: 1em;
     }
-
+    select{
+        all:unset;
+        margin: 0.5em;
+        border-bottom: 0.2em solid grey;
+        color: rgb(119, 106, 106);
+    }
 
 }
 div{

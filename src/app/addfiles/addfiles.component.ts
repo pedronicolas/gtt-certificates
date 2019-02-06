@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApibackendService } from '../apibackend.service';
 
 @Component({
   selector: 'app-addfiles',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddfilesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private api: ApibackendService) { }
 
   ngOnInit() {
+    this.api.isRoleZero();
   }
 
 }
