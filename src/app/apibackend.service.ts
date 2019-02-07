@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { Jira, User } from './model-data';
+import { Jira, User, Certificates } from './model-data';
 import {  HttpHeaders, HttpClientModule } from '@angular/common/http';
 
 
@@ -72,8 +72,9 @@ export class ApibackendService {
      }
    }
 
-   addCertificate(fichero64:any){
-    return this.http.post(this.certificates,{fichero64}).toPromise();
+   addCertificate(fichero64:any,cert:Certificates){
+     cert.fichero64 = fichero64;
+    return this.http.post(this.certificates,cert).toPromise();
    }
 
 }

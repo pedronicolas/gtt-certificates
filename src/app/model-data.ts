@@ -18,7 +18,21 @@ export interface Jira{
 
 }
 
-export interface Certificados{
-    id:number,
-    
+export interface Certificates{
+    id:number;
+    alias:string;
+    entidadEmisora:string;
+    numeroSerie:string;
+    subject:string;
+    fechaCaducidad:Date;
+    password:string;
+    idOrga:number;
+    nombreCliente:string;
+    listaIntegraciones:string;
+    email:string;
+    observaciones:string;
+    repositorio:string,
+    eliminado:boolean;
+    fichero64:string;
+   
 }

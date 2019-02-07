@@ -43,7 +43,7 @@ export class OptionsComponent implements OnInit {
     } else {
       
       this.addUserJiraInfo();
-     this.hasJiraInfo = true;
+     
     }
   }
 
@@ -75,6 +75,7 @@ export class OptionsComponent implements OnInit {
     }
     this.api.addUserJiraInfo(this.jira).then((res:any)=>{
       console.log(res.status);
+      this.hasJiraInfo = true;
     }).catch(err=>{
       console.log(err);
     })
