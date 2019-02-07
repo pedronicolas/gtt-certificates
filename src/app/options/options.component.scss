@@ -39,33 +39,25 @@ form{
 
 }
 
+
+
 div#shutup{
     display: flex;
     justify-content: center;
 }
 div#formulario{
     display: flex; 
-    padding: 2em;
+    padding: 1em;
     background: white;
     border-radius: 2.5em;
-    margin: 0.5em;
-    
+    margin: 0em;
     
    
 }
 button{
-        border:0em;
+        border:0.5em;
         border-radius: 2em;
         padding: 0.25em;
         border: solid grey 0.3em; 
         background:linear-gradient(to right,rgb(10, 133, 47),rgb(117, 238, 117));;;
-}   
-
-form{
-    
-    div{
-        display: flex;
-        flex-direction: column;
-
-    }
-}
+}        

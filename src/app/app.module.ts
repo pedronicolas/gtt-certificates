@@ -12,6 +12,7 @@ import { PrincipalViewComponent } from './principal-view/principal-view.componen
 import { NavbarprincipalComponent } from './navbarprincipal/navbarprincipal.component';
 import { OptionsComponent } from './options/options.component';
 import { AddfilesComponent } from './addfiles/addfiles.component';
+import { AngularFileUploaderModule } from "angular-file-uploader";
  
 
 @NgModule({
@@ -29,7 +30,8 @@ import { AddfilesComponent } from './addfiles/addfiles.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AngularFileUploaderModule
   ],
   providers: [ApibackendService,LoginViewComponent],
   bootstrap: [AppComponent]

@@ -34,6 +34,7 @@ export class RegisterViewComponent implements OnInit {
      }
    }
    ngOnInit(){
-     this.api.isRoleZero();
+    this.api.isLogged(); 
+    this.api.isRoleZero();
    }
 }

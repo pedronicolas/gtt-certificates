@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Jira, User } from './model-data';
+import {  HttpHeaders, HttpClientModule } from '@angular/common/http';
 
 
 @Injectable({
@@ -12,9 +13,10 @@ export class ApibackendService {
   user: string = 'api/users';
   auth: string = 'api/auth';
   jira: string = 'api/jira';
+  certs:string = 'api/certificates'
   certificates: string = 'api/certificates';
   authorization:string = `Bearer: ${this.jwt}`;
-  
+
 
   constructor(private http:HttpClient, private router:Router) { }
   
@@ -68,6 +70,10 @@ export class ApibackendService {
        alert('No tienes permisos suficientes para acceder aquí');
        this.router.navigate(['/home']);
      }
+   }
+
+   addCertificate(fichero64:any){
+    return this.http.post(this.certificates,{fichero64}).toPromise();
    }
 
 }

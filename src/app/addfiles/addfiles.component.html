@@ -1,2 +1,19 @@
 <navbarprincipal></navbarprincipal>
+<h2>CARGA DE CERTIFICADOS</h2>
+<div class="formulario">
+<form >
+    <input type="text" name="alias" placeholder="Alias" [(ngModel)]="alias">
+    <input type="password" name="pass" placeholder="Contraseña" [(ngModel)]="password">
+    <input type="text" name="idorga" placeholder="Nombre Cliente/Id Organización" [(ngModel)]="idorga">
+    <input type="text" name="integrations" placeholder="Lista de integraciones" [(ngModel)]="integrations">
+    <input type="text" name="contact" placeholder="E-mail Contacto" [(ngModel)]="contact">
+    <input type="text" name="repository" placeholder="Repositorio" [(ngModel)]="repository">
+    <input type="text" name="observations" placeholder="Observaciones" [(ngModel)]="observations">
+    <input (change)="obtainCert($event)" type="file" accept="*.p12" (change)="changeListener($event)">
+    <button (click)="cargaCertificado()">Enviar</button>
+</form>
+</div>
 
+
+
+<button (click)="cargaCertificado()">Enviar</button>
