@@ -1,5 +1,7 @@
 <navbarprincipal></navbarprincipal>
 <h2>CARGA DE CERTIFICADOS</h2>
+<div id="display">
+<div id="jaja">
 <div class="formulario">
 <form >
     <input type="text" name="alias" placeholder="Alias" [(ngModel)]="alias">
@@ -8,12 +10,10 @@
     <input type="text" name="integrations" placeholder="Lista de integraciones" [(ngModel)]="integrations">
     <input type="text" name="contact" placeholder="E-mail Contacto" [(ngModel)]="contact">
     <input type="text" name="repository" placeholder="Repositorio" [(ngModel)]="repository">
-    <input type="text" name="observations" placeholder="Observaciones" [(ngModel)]="observations">
+    <textarea id="obs" type="text" name="observations" placeholder="Observaciones" [(ngModel)]="observations"></textarea>
     <input (change)="obtainCert($event)" type="file" accept="*.p12" (change)="changeListener($event)">
     <button (click)="cargaCertificado()">Enviar</button>
 </form>
 </div>
-
-
-
-<button (click)="cargaCertificado()">Enviar</button>
+</div>
+</div>

@@ -42,3 +42,24 @@ button{
     border-radius: 1em;
     align-content: center;
 }
+
+div#jaja{
+    display: flex;
+    background: white;
+    border-radius: 2em;
+    width: 25em;
+    justify-items: center;
+    justify-content: center;
+    margin: 0.5em;
+}
+
+div#display{
+    display: flex;
+    justify-content: center;
+}
+
+textarea{
+    width: 12em;
+    height: 8em;
+    resize: none;
+}
