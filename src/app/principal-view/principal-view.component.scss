@@ -19,6 +19,7 @@ div{
     grid-template-columns: repeat(5,1fr);
     
     
+    
     div{
         border: 3px solid green;
         background: linear-gradient(to right,rgb(10, 133, 47),rgb(117, 238, 117));
@@ -28,15 +29,20 @@ div{
 
 .certificados-item{
     display: contents;
+    div{
+        height: 2px;
+    }
     
 }
 
-.buttons{
+div#botones{
     display: flex;
     flex-direction: row;
-    
-
-    
+    justify-content: center;
+    button{
+        all: unset;
+        margin: 1em;
+    }
 }
 
 .certificados-body{
@@ -52,4 +58,8 @@ div{
         background: white;
         border: 2px solid black; 
     }
+}
+
+.unic{
+    
 }

@@ -34,5 +34,6 @@ export interface Certificates{
     repositorio:string,
     eliminado:boolean;
     fichero64:string;
+    nombreArchivo:string;
    
 }

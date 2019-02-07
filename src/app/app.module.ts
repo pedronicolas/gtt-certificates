@@ -13,6 +13,7 @@ import { NavbarprincipalComponent } from './navbarprincipal/navbarprincipal.comp
 import { OptionsComponent } from './options/options.component';
 import { AddfilesComponent } from './addfiles/addfiles.component';
 import { AngularFileUploaderModule } from "angular-file-uploader";
+import { DetailsofcertComponent } from './detailsofcert/detailsofcert.component';
  
 
 @NgModule({
@@ -24,7 +25,8 @@ import { AngularFileUploaderModule } from "angular-file-uploader";
     PrincipalViewComponent,
     NavbarprincipalComponent,
     OptionsComponent,
-    AddfilesComponent
+    AddfilesComponent,
+    DetailsofcertComponent
   ],
   imports: [
     BrowserModule,

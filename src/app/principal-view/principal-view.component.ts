@@ -29,6 +29,24 @@ export class PrincipalViewComponent implements OnInit {
   }
 
 
+  // download(cert:any){
+  //   var contentType = "file/pfx";
+  //   var byteCharacters = atob(this.certificateActive.fichero64);
+  //   var byteNumbers = new Array(byteCharacters.length);
+
+  //   for (var i = 0; i < byteCharacters.length; i++) {
+  //     byteNumbers[i] = byteCharacters.charCodeAt(i);
+  //   }
+  //   var byteArray = new Uint8Array(byteNumbers);
+  //   var blob = new Blob([byteArray], {
+  //     type: contentType
+  //   });
+  //   var aux_document = document.createElement("a");
+  //   aux_document.href = URL.createObjectURL(blob);
+  //   aux_document.download = `${this.certificateActive.alias}.pfx`;
+  //   document.body.appendChild(aux_document);
+  //   aux_document.click()
+  // }
 
 
   ngOnInit() {

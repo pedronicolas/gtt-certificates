@@ -26,24 +26,24 @@
 
 <div class="certificados-body">
  <div class="certificados-item" *ngFor="let certificados of certificates">
-    <div>
+    <div class="unic">
         {{certificados.alias}}
     </div>
 
-    <div>
+    <div class="unic">
         {{certificados.entidadEmisora}}
     </div>
-    <div>
+    <div class="unic">
         {{certificados.fechaCaducidad}}
     </div>
-    <div>
+    <div class="unic">
         {{certificados.nombreCliente}}
     </div>
-    <div class="buttons">
+    
+        <div id="botones" class="unic">
         <button (click)="isDeleted()">❌</button>
         <button (click)="goDetails()">📑</button>
-       
-        
+        <button (click)="download(certificados)">Descarga</button>
+        </div>
     </div>
- </div>
 </div>
