@@ -42,8 +42,8 @@
     
         <div id="botones" class="unic">
         <button (click)="isDeleted()">❌</button>
-        <button (click)="goDetails()">📑</button>
-        <button (click)="download(certificados)">Descarga</button>
+        <button routerLink="/certificate/{{certificados.id}}">📑</button>
+        <button (click)="download(certificados)">💾</button>
         </div>
     </div>
 </div>

@@ -77,4 +77,10 @@ export class ApibackendService {
     return this.http.post(this.certificates,cert).toPromise();
    }
 
+   getCert(idCert:number){
+    console.log(this.certs + idCert);
+     
+    return this.http.get(this.certs +'/'+ idCert).toPromise();
+   }
+
 }

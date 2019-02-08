@@ -5,6 +5,8 @@ import { RegisterViewComponent } from './register-view/register-view.component';
 import { PrincipalViewComponent } from './principal-view/principal-view.component';
 import { OptionsComponent } from './options/options.component';
 import { AddfilesComponent } from './addfiles/addfiles.component';
+import{DetailsofcertComponent} from './detailsofcert/detailsofcert.component';
+
 
 const routes: Routes = [{
   path: 'login', 
@@ -17,6 +19,11 @@ const routes: Routes = [{
 {
   path: 'options',
   component: OptionsComponent
+},
+{
+  path: 'certificate/:id',
+  component: DetailsofcertComponent
+
 },
 {
   path: '', 
