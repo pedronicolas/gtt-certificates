@@ -1,5 +1,5 @@
 <navbarprincipal></navbarprincipal>
-
+<div id="container">
 <div id="formulario" (keyup.enter)="register()">
     <input type="text" placeholder="Nombre de usuario" [(ngModel)]="username" name="username">
     <input type="password" placeholder="Contraseña" [(ngModel)]="password"name="password">
@@ -8,10 +8,10 @@
       <option  value="0">Admin</option>
     </select>
     
-    <button (click)="register()">Register</button>
+    <button (click)="register()">Registrar</button>
     
-  </div>
-
+</div>
+</div>
 
   <div *ngIf="correct === aceptado">
     {{correct}}

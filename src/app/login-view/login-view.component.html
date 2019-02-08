@@ -1,11 +1,11 @@
 <navbar></navbar>
-
+<div id="container">
 <div id="formulario" (keyup.enter)="login()">
     <input type="text" placeholder="Nombre de usuario" [(ngModel)]="username" name="username">
     <input type="password" placeholder="Contraseña" [(ngModel)]="password"name="password">
     <button (click)="login()">Login</button>
   </div>
-
+</div>
   <div id="error">
     {{comment}}
   </div>

@@ -1,8 +1,15 @@
+div#container{
+    display: flex;
+    justify-content: center;
+}
 div#formulario{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    background: white;
+    padding: 1.5em;
+    margin: 5em;
+    border-radius: 2em;
     
     
     input{
@@ -16,7 +23,7 @@ div#formulario{
     }
     button{
         border:0.2em solid grey;
-        background:white;
+        background:rgb(36, 189, 36);
         padding: 0.25em;
         color: black;
         border-radius: 1em;
