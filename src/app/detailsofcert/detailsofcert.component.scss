@@ -18,6 +18,7 @@
         }
         div#sujeto{
             height: 80px;
+            
         }
         div#entidad{
             height: 45px;
@@ -32,7 +33,11 @@
         grid-gap: 2px;
         
         div{
-            border: 20px ;
+            
+            border: 20px;
+        }
+        div#sujeto{
+            margin: 0.5em;
         }
     }
 }

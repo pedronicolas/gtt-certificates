@@ -31,6 +31,9 @@ export class RegisterViewComponent implements OnInit {
          console.log(error);
          
        })
+     } else{
+       console.error('error');
+       
      }
    }
    ngOnInit(){

@@ -45,8 +45,8 @@ export class OptionsComponent implements OnInit {
   }
 
   modifyUserJiraInfo(){
-    console.log('entro aquí');
-    if(this.username !== '' && this.pass !=''){
+    
+    if(this.username.trim() !== '' && this.pass.trim() !=''){
     this.jira = {
       username: this.usernamejira,
       pass: this.pass,

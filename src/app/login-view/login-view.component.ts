@@ -10,12 +10,11 @@ import { Router } from '@angular/router';
 })
 export class LoginViewComponent implements OnInit{
   username:string;
-  usernamee;
-  passworde;
   password:string;
   jwt :string;
   userId:number;
   comment:any;
+  error;
   constructor(private api: ApibackendService, private router: Router) { }
 
 
