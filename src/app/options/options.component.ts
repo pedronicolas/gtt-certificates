@@ -10,7 +10,7 @@ import { User, Jira } from '../model-data';
 export class OptionsComponent implements OnInit {
   // user:User;
   jira:any;
-  hasJiraInfo = false;
+  hasJiraInfo;
   username:string;
   role:string;
   usernamejira;
@@ -29,16 +29,13 @@ export class OptionsComponent implements OnInit {
         console.log('aceptado');
         this.username = result.username;
         this.role = result.role;
-
-        
-
       }).catch(error=>{
         console.log(error);
       }) 
   
   }
   sendUserJiraInfo(){
-    if (this.hasJiraInfo) {
+    if (this.hasJiraInfo ===true) {
       this.modifyUserJiraInfo();
     } else {
       
@@ -49,6 +46,7 @@ export class OptionsComponent implements OnInit {
 
   modifyUserJiraInfo(){
     console.log('entro aquí');
+    if(this.username !== '' && this.pass !=''){
     this.jira = {
       username: this.usernamejira,
       pass: this.pass,
@@ -57,13 +55,24 @@ export class OptionsComponent implements OnInit {
       url: this.url,
       user_id: localStorage.getItem('id') 
     }
-    this.api.modifyUserJiraInfo(this.jira).then((res:any)=>{
-      console.log(res);
+     
+    this.api.modifyUserJiraInfoApi(this.jira).then((res:any)=>{
+      //console.log(res);
+      this.hasJiraInfo = true;
+      alert('Configurción modificada');
+    }).catch(err=>{
+      console.log(err);
+      
     })
+  }
+  else{
+    alert('el usuario o la contraseña no pueden ser vacios');
+  }
   }
   
   
   addUserJiraInfo(){
+    if(this.username !== '' && this.pass !=''){
     this.jira = {
       username: this.usernamejira,
       pass: this.pass,
@@ -74,13 +83,15 @@ export class OptionsComponent implements OnInit {
 
     }
     this.api.addUserJiraInfo(this.jira).then((res:any)=>{
-      console.log(res.status);
+      //console.log(res.status);
       this.hasJiraInfo = true;
     }).catch(err=>{
       console.log(err);
     })
+  } else{
+    alert('error');
   }
-  
+}
   
   ngOnInit() {
     this.api.isLogged();

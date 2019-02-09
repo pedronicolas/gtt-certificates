@@ -13,7 +13,7 @@ export class PrincipalViewComponent implements OnInit {
   username:string;
   role:any;
   certificates;
-
+  subjectSplit;
   constructor(private api:ApibackendService,private login:LoginViewComponent) { }
 
   getUserInfo(){
@@ -23,6 +23,8 @@ export class PrincipalViewComponent implements OnInit {
   getCertificates(){
     this.api.getCertificates().then((res:any)=>{
       this.certificates = res;
+      
+
     }).catch((err:any)=>{
       console.log(err);
     })

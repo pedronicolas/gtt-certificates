@@ -5,9 +5,9 @@
   <select (change)="changeHomePage($event)">
     <option>Menú ⏬</option>
     <option value="/home" >Home</option>
-    <option value="/register">Registro de Usuarios</option>
+    <option value="/register" *ngIf="role ==='0'">Registro de Usuarios</option>
     <option value="/options">Opciones</option>
-    <option value="/upload">Carga Certificados</option>    
+    <option value="/upload" *ngIf="role ==='0'">Carga Certificados</option>    
     <option value="/logout">Cerrar Sesión</option>
 
   </select> 

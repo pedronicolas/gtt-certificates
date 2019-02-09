@@ -12,6 +12,7 @@ import { routerNgProbeToken } from '@angular/router/src/router_module';
 })
 export class NavbarprincipalComponent {
   rutaDestino:string;
+  role: string = localStorage.getItem('rol');
   constructor(private router: Router, private api:ApibackendService) { }
 
    changeHomePage(ev){

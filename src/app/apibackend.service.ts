@@ -48,8 +48,8 @@ export class ApibackendService {
     return this.http.post(this.jira,jira).toPromise();
   }
 
-  modifyUserJiraInfo(jira:Jira){
-    return this.http.put(this.jira+ '/'+ localStorage.getItem('id'),jira ).toPromise();
+  modifyUserJiraInfoApi(jira:Jira){
+    return this.http.put(this.jira+ '/'+ jira.user_id,jira ).toPromise();
   }
   
   isLogged(){
