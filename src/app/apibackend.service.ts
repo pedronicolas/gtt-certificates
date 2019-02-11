@@ -9,13 +9,13 @@ import {  HttpHeaders, HttpClientModule } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ApibackendService {
-  jwt:string = localStorage.getItem('id');
+  jwt:string = localStorage.getItem('jwt');
   user: string = 'api/users';
   auth: string = 'api/auth';
   jira: string = 'api/jira';
   certs:string = 'api/certificates'
   certificates: string = 'api/certificates';
-  authorization:string = `Bearer: ${this.jwt}`;
+  options = { headers: { Authorization: `${this.jwt}` } };
 
 
   constructor(private http:HttpClient, private router:Router) { }
@@ -41,15 +41,15 @@ export class ApibackendService {
   }  
 
   getUserInfo(userid){
-   return this.http.get('api/users/'+userid).toPromise();  
+   return this.http.get('api/users/'+userid,this.options).toPromise();  
   }
 
   addUserJiraInfo(jira:Jira ){
-    return this.http.post(this.jira,jira).toPromise();
+    return this.http.post(this.jira,jira,this.options).toPromise();
   }
 
   modifyUserJiraInfoApi(jira:Jira){
-    return this.http.put(this.jira+ '/'+ jira.user_id,jira ).toPromise();
+    return this.http.put(this.jira+ '/'+ jira.user_id,jira,this.options ).toPromise();
   }
   
   isLogged(){
@@ -59,11 +59,11 @@ export class ApibackendService {
   }
 
    getJiraInfo(){
-     return this.http.get(this.jira +"/"+ localStorage.getItem('id')).toPromise();
+     return this.http.get(this.jira +"/"+ localStorage.getItem('id'),this.options).toPromise();
    }
 
    getCertificates(){
-    return this.http.get(this.certificates).toPromise();
+    return this.http.get(this.certificates,this.options).toPromise();
    }
    isRoleZero(){
      if(localStorage.getItem('rol')==='1'){
@@ -74,13 +74,13 @@ export class ApibackendService {
 
    addCertificate(fichero64:any,cert:Certificates){
      cert.fichero64 = fichero64;
-    return this.http.post(this.certificates,cert).toPromise();
+    return this.http.post(this.certificates,cert,this.options).toPromise();
    }
 
    getCert(idCert:number){
     console.log(this.certs + idCert);
      
-    return this.http.get(this.certs +'/'+ idCert).toPromise();
+    return this.http.get(this.certs +'/'+ idCert,this.options).toPromise();
    }
 
 }

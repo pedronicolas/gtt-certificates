@@ -12,7 +12,7 @@
     <input type="text" name="repository" placeholder="Repositorio" [(ngModel)]="repository">
     <textarea id="obs" type="text" name="integrations" placeholder="Integraciones" [(ngModel)]="integrations"></textarea>
     <textarea id="obs" type="text" name="observations" placeholder="Observaciones" [(ngModel)]="observations"></textarea>
-    <input (change)="obtainCert($event)" type="file" accept=".p12" (change)="changeListener($event)">
+    <input (change)="obtainCert($event)" type="file" accept=".p12,.pfx" (change)="changeListener($event)">
 </form>
 </div>
 </div>

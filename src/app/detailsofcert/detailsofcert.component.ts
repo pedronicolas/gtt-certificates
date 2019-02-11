@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApibackendService } from '../apibackend.service';
 import { Certificates } from '../model-data';
+import { timeout } from 'q';
 
 @Component({
   selector: 'app-detailsofcert',
@@ -15,13 +16,15 @@ export class DetailsofcertComponent implements OnInit {
 
   ngOnInit() {
     this.id = Number(this.route.snapshot.paramMap.get('id'));
-    this.apiD.getCert(this.id).then((res:Certificates)=>{
-      this.certificado = res;
-      
-      
-    }).catch(err=>{
-      console.log(err);
-    })
+      this.apiD.getCert(this.id).then((res:Certificates)=>{
+        this.certificado = res;
+        
+        
+      }).catch(err=>{
+        console.log(err);
+      })
+    
+   
   }
 
 }
