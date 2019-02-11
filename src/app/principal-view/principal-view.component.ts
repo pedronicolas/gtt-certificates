@@ -57,4 +57,41 @@ export class PrincipalViewComponent implements OnInit {
     this.getCertificates();
   }
 
+  ordenateSortAlias(){
+    this.certificates.sort((a,b)=>{
+      if (a.alias > b.alias) {
+        return 1;
+      }
+      if (a.alias < b.alias) {
+        return -1;
+      }
+      // a must be equal to b
+      return 0;
+    })
+  }
+
+  ordenateSortCad(){
+    this.certificates.sort((a,b)=>{
+      if (a.fechaCaducidad > b.fechaCaducidad) {
+        return 1;
+      }
+      if (a.fechaCaducidad < b.fechaCaducidad) {
+        return -1;
+      }
+      // a must be equal to b
+      return 0;
+    })
+  }
+  ordenateSortNom(){
+    this.certificates.sort((a,b)=>{
+      if (a.nombreCliente > b.nombreCliente) {
+        return 1;
+      }
+      if (a.nombreCliente < b.nombreCliente) {
+        return -1;
+      }
+      // a must be equal to b
+      return 0;
+    })
+  }
 }
