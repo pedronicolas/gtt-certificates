@@ -15,10 +15,10 @@ export class OptionsComponent implements OnInit {
   role:string;
   usernamejira;
   pass;
-  proyect;
-  component;
+  proyect ="SIT";
+  component ="Arquitectura";
   url;
-  issue;
+  issue = "explotacion";
   constructor(private api:ApibackendService) { }
 
   getUserInfo(){

@@ -6,6 +6,7 @@ import { PrincipalViewComponent } from './principal-view/principal-view.componen
 import { OptionsComponent } from './options/options.component';
 import { AddfilesComponent } from './addfiles/addfiles.component';
 import{DetailsofcertComponent} from './detailsofcert/detailsofcert.component';
+import { RenovateCertificatesComponent } from './renovate-certificates/renovate-certificates.component';
 
 
 const routes: Routes = [{
@@ -15,6 +16,10 @@ const routes: Routes = [{
 {
   path: 'register',
   component: RegisterViewComponent
+},
+{
+  path: 'renovate',
+  component: RenovateCertificatesComponent
 },
 {
   path: 'options',
