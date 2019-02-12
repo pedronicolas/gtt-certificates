@@ -35,5 +35,7 @@ export interface Certificates{
     eliminado:boolean;
     fichero64:string;
     nombreArchivo:string;
+    caducado:boolean,
+    ticket_creado:boolean;
    
 }

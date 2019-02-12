@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ApibackendService } from '../apibackend.service';
 import { LoginViewComponent } from '../login-view/login-view.component';
+import { forEach } from '@angular/router/src/utils/collection';
+import { Certificates } from '../model-data';
 
 @Component({
   selector: 'app-principal-view',
@@ -12,7 +14,7 @@ export class PrincipalViewComponent implements OnInit {
   idUser = this.login.userId;
   username:string;
   role:any;
-  certificates:any;
+  certificates:Array<Certificates>;
   subjectSplit:any;
   constructor(private api:ApibackendService,private login:LoginViewComponent) { }
 
@@ -23,6 +25,21 @@ export class PrincipalViewComponent implements OnInit {
   getCertificates(){
     this.api.getCertificates().then((res:any)=>{
       this.certificates = res;
+      this.certificates.forEach(cert => {
+        if(cert.caducado === true && cert.ticket_creado === false){
+          console.log('caducado');
+          var r = confirm('Certificado caducado, ¿quieres renovarlo?');
+          if(r===true){
+          this.api.sendTicket().then((res)=>{
+            console.log('enviado');
+            //Aquí tienes que hacer un put y poner el ticket_creado a true;
+            
+          }).catch(err=>{
+            console.log(err);
+          })
+        }
+        }
+      });
       
 
     }).catch((err:any)=>{

@@ -40,7 +40,9 @@ export class AddfilesComponent implements OnInit {
       eliminado:false,
       repositorio:this.repository,
       fichero64:"",
-      nombreArchivo: event.target.value.split("\\")[2]
+      nombreArchivo: event.target.value.split("\\")[2],
+      caducado:false,
+      ticket_creado:false
     }
     
     console.log(event.target.value.split("\\")[2]);

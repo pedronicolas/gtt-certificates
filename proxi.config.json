@@ -3,5 +3,12 @@
   "target": "https://localhost:44315/",
   "secure": false,
   "changeOrigin": true
+  },
+  "/rest/*":{
+  "target": "https://localhost:44315/",
+  "secure": false,
+  "changeOrigin": true
   }
+
 }
+

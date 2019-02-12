@@ -83,4 +83,7 @@ export class ApibackendService {
     return this.http.get(this.certs +'/'+ idCert,this.options).toPromise();
    }
 
+    sendTicket(){
+      return this.http.post('api/rest',this.options).toPromise();
+    }
 }

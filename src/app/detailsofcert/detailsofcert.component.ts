@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApibackendService } from '../apibackend.service';
 import { Certificates } from '../model-data';
-import { timeout } from 'q';
+
 
 @Component({
   selector: 'app-detailsofcert',
@@ -10,7 +10,7 @@ import { timeout } from 'q';
   styleUrls: ['./detailsofcert.component.scss']
 })
 export class DetailsofcertComponent implements OnInit {
-  id;
+  id:number;
   certificado:Certificates;
   constructor(private route: ActivatedRoute, public apiD:ApibackendService) { }
 
