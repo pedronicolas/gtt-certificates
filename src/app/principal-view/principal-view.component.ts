@@ -12,8 +12,8 @@ export class PrincipalViewComponent implements OnInit {
   idUser = this.login.userId;
   username:string;
   role:any;
-  certificates;
-  subjectSplit;
+  certificates:any;
+  subjectSplit:any;
   constructor(private api:ApibackendService,private login:LoginViewComponent) { }
 
   getUserInfo(){

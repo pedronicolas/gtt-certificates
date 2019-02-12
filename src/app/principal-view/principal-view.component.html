@@ -16,7 +16,7 @@
 
 <div class="certificados-body">
  <div class="certificados-item" *ngFor="let certificados of certificates">
-    <div class="unic">
+    <div class="jaja {{certificados.eliminado?'eliminado':'' }}">
         {{certificados.alias}}
     </div>
 
