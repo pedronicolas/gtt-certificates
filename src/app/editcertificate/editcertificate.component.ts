@@ -47,7 +47,6 @@ export class EditCertificateComponent implements OnInit {
       ticket_creado:false
     }
     
-    console.log(event.target.value.split("\\")[2]);
     
     
     
@@ -57,9 +56,9 @@ export class EditCertificateComponent implements OnInit {
     reader.onload = function(){
       arrayBuffer = reader.result;
       var arrayBuffer2 = arrayBuffer.split(',');
-      gtt_aux.addCertificate(arrayBuffer2[1],cert)
+      gtt_aux.modifyCertificate(arrayBuffer2[1],cert)
           .then(()=>{
-            alert('Certificado añadido');
+            alert('Certificado modificado');
           }).catch(console.error);
     };
     reader.readAsDataURL(event.target.files[0]);

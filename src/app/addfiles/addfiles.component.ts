@@ -45,7 +45,6 @@ export class AddfilesComponent implements OnInit {
       ticket_creado:false
     }
     
-    console.log(event.target.value.split("\\")[2]);
     
     
     
