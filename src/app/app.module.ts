@@ -15,6 +15,7 @@ import { AddfilesComponent } from './addfiles/addfiles.component';
 import { AngularFileUploaderModule } from "angular-file-uploader";
 import { DetailsofcertComponent } from './detailsofcert/detailsofcert.component';
 import { RenovateCertificatesComponent } from './renovate-certificates/renovate-certificates.component';
+import { EditcertificateComponent } from './editcertificate/editcertificate.component';
  
 
 @NgModule({
@@ -28,7 +29,8 @@ import { RenovateCertificatesComponent } from './renovate-certificates/renovate-
     OptionsComponent,
     AddfilesComponent,
     DetailsofcertComponent,
-    RenovateCertificatesComponent
+    RenovateCertificatesComponent,
+    EditcertificateComponent
   ],
   imports: [
     BrowserModule,

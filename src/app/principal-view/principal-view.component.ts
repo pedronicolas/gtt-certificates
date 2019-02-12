@@ -13,7 +13,7 @@ export class PrincipalViewComponent implements OnInit {
   
   idUser = this.login.userId;
   username:string;
-  role:any;
+  role:string = localStorage.getItem('rol'); 
   certificates:Array<Certificates>;
   subjectSplit:any;
   constructor(private api:ApibackendService,private login:LoginViewComponent) { }
