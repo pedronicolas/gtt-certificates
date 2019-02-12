@@ -26,7 +26,7 @@ export class OptionsComponent implements OnInit {
     
     this.api.getUserInfo(localStorage.getItem('id'))
       .then((result:any)=>{
-        console.log('aceptado');
+        
         this.username = result.username;
         this.role = result.role;
       }).catch(error=>{
