@@ -1,2 +1,19 @@
 <navbarprincipal></navbarprincipal>
-<h1>EDICIÓN DE CERTIFICADO</h1>
+<h2>EDICIÓN DE CERTIFICADO </h2>
+<div id="display">
+<div id="jaja">
+<div class="formulario">
+<form >
+    
+    <input type="text" name="alias" placeholder="Alias" [(ngModel)]="alias">
+    <input type="password" name="pass" placeholder="Contraseña" [(ngModel)]="password">
+    <input type="text" name="idorga" placeholder="Nombre Cliente/Id Organización" [(ngModel)]="idorga">
+    <input type="text" name="contact" placeholder="E-mail Contacto" [(ngModel)]="contact">
+    <input type="text" name="repository" placeholder="Repositorio" [(ngModel)]="repository">
+    <textarea id="obs" type="text" name="integrations" placeholder="Integraciones" [(ngModel)]="integrations"></textarea>
+    <textarea id="obs" type="text" name="observations" placeholder="Observaciones" [(ngModel)]="observations"></textarea>
+    <input (change)="obtainCert($event)" type="file" accept=".p12,.pfx">
+</form>
+</div>
+</div>
+</div>

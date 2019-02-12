@@ -86,4 +86,9 @@ export class ApibackendService {
     sendTicket(){
       return this.http.post('api/rest',this.options).toPromise();
     }
+
+  modifyCertificate(fichero64:any,cert:Certificates){
+    cert.fichero64 = fichero64;
+    return this.http.put(this.certificates+'/'+cert.id,cert,this.options).toPromise();
+  }  
 }

@@ -7,6 +7,7 @@ import { OptionsComponent } from './options/options.component';
 import { AddfilesComponent } from './addfiles/addfiles.component';
 import{DetailsofcertComponent} from './detailsofcert/detailsofcert.component';
 import { RenovateCertificatesComponent } from './renovate-certificates/renovate-certificates.component';
+import { EditCertificateComponent } from './editcertificate/editcertificate.component';
 
 
 const routes: Routes = [{
@@ -28,6 +29,11 @@ const routes: Routes = [{
 {
   path: 'certificate/:id',
   component: DetailsofcertComponent
+
+},
+{
+  path: 'certificatechange/:id',
+  component: EditCertificateComponent
 
 },
 {
