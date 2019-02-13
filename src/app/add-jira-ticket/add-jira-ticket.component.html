@@ -5,7 +5,12 @@
   <div id="jaja">
   <div class="formulario">
   <form >
-      
+      <div>
+        Usuario Jira: {{jira.username}}
+      </div>
+      <div>
+        Url: {{jira.url}}
+      </div>
       <textarea id="obs" type="text" name="observations" placeholder="Observaciones" [(ngModel)]="observations"></textarea>
       <button (click)="crearTicket()">Crear Ticket</button>
   </form>

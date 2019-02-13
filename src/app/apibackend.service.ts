@@ -91,4 +91,9 @@ export class ApibackendService {
     cert.fichero64 = fichero64;
     return this.http.put(this.certificates+'/'+cert.id,cert,this.options).toPromise();
   }  
+
+  loginJira(url,user,pass){
+    console.log(url);
+    return this.http.post(url+'rest/auth/1/session',{username: user,password:pass}).toPromise();
+  }
 }

@@ -21,6 +21,14 @@ export class AddJiraTicketComponent implements OnInit {
         
       }
     })
+     
+    if (this.jira != null){
+      this.api.loginJira(this.jira.url,this.jira.username,this.jira.pass).then((res:any)=>{
+        localStorage.setItem('jwt_jira', res.session.value);
+      })
+    }
+  
+  
   }
 
 }
