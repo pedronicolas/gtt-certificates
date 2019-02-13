@@ -13,8 +13,12 @@ export class ApibackendService {
   user: string = 'api/users';
   auth: string = 'api/auth';
   jira: string = 'api/jira';
-  certs:string = 'api/certificates'
+  certs:string = 'api/certificates';
+  credentialsLoginjira:string = 'rest/auth/1/session';
   certificates: string = 'api/certificates';
+  headerJira = { headers: {
+    "User-Agent": "xx"
+  }};
   options = { headers: { Authorization: `${this.jwt}` } };
 
 
@@ -92,8 +96,9 @@ export class ApibackendService {
     return this.http.put(this.certificates+'/'+cert.id,cert,this.options).toPromise();
   }  
 
-  loginJira(url,user,pass){
-    console.log(url);
-    return this.http.post(url+'rest/auth/1/session',{username: user,password:pass}).toPromise();
+  loginJira(username,password){   
+    console.log(username + '' + password);
+     
+    return this.http.post(this.credentialsLoginjira,{username,password},this.headerJira).toPromise();
   }
 }

@@ -1,17 +1,53 @@
 <navbarprincipal></navbarprincipal>
 <h2>CREACIÓN TICKET JIRA</h2>
 
-<div id="display">
+<div *ngIf="isLogged === false" id="display">
+  <div id="jaja">
+  <div class="formulario">
+  <form >
+    <div>
+    <strong>Usuario Jira</strong>   
+    </div>
+    <div>
+      {{jira.username}}
+    </div>
+    <div>
+     <strong>Url</strong> 
+    </div>
+    <div>
+      {{jira.url}}
+    </div>
+    <div>
+      <strong>Introduce tu contraseña de Jira</strong> 
+     </div>
+      <input type="password" name="pass" placeholder="Contraseña" [(ngModel)]="password">
+      <button (click)="logInJira()">Acceso a Cuenta Jira</button>
+  </form>
+  </div>
+  </div>
+  </div>
+
+
+
+
+<div *ngIf="isLogged === true" id="display">
   <div id="jaja">
   <div class="formulario">
   <form >
       <div>
-        Usuario Jira: {{jira.username}}
+       <strong>Usuario Jira</strong>  
       </div>
       <div>
-        Url: {{jira.url}}
+        {{jira.username}}
       </div>
-      <textarea id="obs" type="text" name="observations" placeholder="Observaciones" [(ngModel)]="observations"></textarea>
+      <div>
+        <strong>Url</strong> 
+      </div>
+      <div>
+        {{jira.url}}
+      </div>
+      
+      <textarea id="obs" type="text" name="observations" placeholder="Descripción del ticket" [(ngModel)]="observations"></textarea>
       <button (click)="crearTicket()">Crear Ticket</button>
   </form>
   </div>

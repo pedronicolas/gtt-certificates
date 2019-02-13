@@ -9,8 +9,27 @@ import { Jira } from '../model-data';
 })
 export class AddJiraTicketComponent implements OnInit {
   jira:Jira;
+  password:string;
+  isLogged:boolean = false;
+  
   constructor(private api:ApibackendService) { }
 
+  
+  logInJira(){
+    console.log('llamo');
+    
+    this.api.loginJira(this.jira.username,this.password).then((res:any)=>{
+      
+      console.log(res.session.value);
+      
+      localStorage.setItem('jwt_jira', res.session.value);
+      this.isLogged = true;
+    })
+  }
+  
+  
+  
+  
   ngOnInit() {
     this.api.getJiraInfo().then((res:any)=>{
       if(res !== null){
@@ -18,16 +37,14 @@ export class AddJiraTicketComponent implements OnInit {
         this.jira.proyect = 'SIT';
         this.jira.issue = 'Explotacion!';
         console.log(this.jira.issue);
+        console.log(this.isLogged);
+        
+        //console.log(this.jira.pass);
+         
         
       }
     })
      
-    if (this.jira != null){
-      this.api.loginJira(this.jira.url,this.jira.username,this.jira.pass).then((res:any)=>{
-        localStorage.setItem('jwt_jira', res.session.value);
-      })
-    }
-  
   
   }
 

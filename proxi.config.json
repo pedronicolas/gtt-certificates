@@ -5,7 +5,7 @@
   "changeOrigin": true
   },
   "/rest/*":{
-  "target": "https://localhost:44315/",
+  "target": "https://pedronicolasgtt.atlassian.net/",
   "secure": false,
   "changeOrigin": true
   }
