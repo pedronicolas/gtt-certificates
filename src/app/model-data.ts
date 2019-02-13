@@ -8,13 +8,14 @@ export interface User {
 }
 
 export interface Jira{
-    id:number,
-    username:string,
-    pass:string,
-    url:string,
-    component: string,
-    proyect:string,
-    user_id: number
+    id:number;
+    username:string;
+    pass:string;
+    url:string;
+    component: string;
+    proyect:string;
+    user_id: number;
+    issue: string;
 
 }
 
