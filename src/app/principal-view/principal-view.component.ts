@@ -3,6 +3,7 @@ import { ApibackendService } from '../apibackend.service';
 import { LoginViewComponent } from '../login-view/login-view.component';
 import { forEach } from '@angular/router/src/utils/collection';
 import { Certificates } from '../model-data';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-principal-view',
@@ -16,7 +17,7 @@ export class PrincipalViewComponent implements OnInit {
   role:string = localStorage.getItem('rol'); 
   certificates:Array<Certificates>;
   subjectSplit:any;
-  constructor(private api:ApibackendService,private login:LoginViewComponent) { }
+  constructor(private api:ApibackendService,private login:LoginViewComponent,private router:Router) { }
 
   getUserInfo(){
     this.api.getUserInfo(this.idUser);
@@ -30,14 +31,8 @@ export class PrincipalViewComponent implements OnInit {
           console.log('caducado');
           var r = confirm('Certificado caducado, ¿quieres renovarlo?');
           if(r===true){
-          this.api.sendTicket().then((res)=>{
-            console.log('enviado');
-            //Aquí tienes que hacer un put y poner el ticket_creado a true;
-            
-          }).catch(err=>{
-            console.log(err);
-          })
-        }
+            this.router.navigate([`addJiraTicket/${cert.id}`]);
+          }
         }
       });
       
