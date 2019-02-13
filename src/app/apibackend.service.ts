@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { Jira, User, Certificates } from './model-data';
+import { Jira, User, Certificates, Ticket } from './model-data';
 import {  HttpHeaders, HttpClientModule } from '@angular/common/http';
 
 
@@ -19,6 +19,11 @@ export class ApibackendService {
   headerJira = { headers: {
     "User-Agent": "xx"
   }};
+  headerJiraJ = { headers: {
+    'User-Agent': "xx",
+    'Authorization' : `${localStorage.getItem('jwt_jira').trim()}`,
+    'Content-Type': 'application/json'
+  }};;
   options = { headers: { Authorization: `${this.jwt}` } };
 
 
@@ -26,9 +31,7 @@ export class ApibackendService {
   
 
   register(username:string, password:string,role){
-    console.log("cipoEntra");
-      console.log(role);
-    return this.http.post(this.user,{username,password,role})
+        return this.http.post(this.user,{username,password,role})
      .toPromise();
   }
 
@@ -100,5 +103,9 @@ export class ApibackendService {
     console.log(username + '' + password);
      
     return this.http.post(this.credentialsLoginjira,{username,password},this.headerJira).toPromise();
+  }
+  createTicket(cuerpo:Ticket){
+    console.log(this.headerJira);
+    return this.http.post('rest/api/2/issue',cuerpo,this.headerJiraJ).toPromise();
   }
 }

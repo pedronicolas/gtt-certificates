@@ -6,7 +6,7 @@
   },
   "/rest/*":{
   "target": "https://pedronicolasgtt.atlassian.net/",
-  "secure": false,
+  "secure": true,
   "changeOrigin": true
   }
 

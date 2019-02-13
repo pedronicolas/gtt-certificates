@@ -24,7 +24,7 @@ export class RegisterViewComponent implements OnInit {
        .then((res:any)=>{
          this.valid = res;
          this.correct = res.comment; 
-         console.log(res);
+         
          })
        .catch(error=>{
          this.error = error;

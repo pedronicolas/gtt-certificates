@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApibackendService } from '../apibackend.service';
-import { Jira } from '../model-data';
+import { Jira, Ticket } from '../model-data';
+import { RouterLinkActive, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-add-jira-ticket',
@@ -8,11 +9,35 @@ import { Jira } from '../model-data';
   styleUrls: ['./add-jira-ticket.component.scss']
 })
 export class AddJiraTicketComponent implements OnInit {
+  id:number;
   jira:Jira;
   password:string;
   isLogged:boolean = false;
+  headerJiraAuth:string;
+
+  key = "SIT";
+  summary = "Dale calor";
+ description = "Creating of an issue using project keys and issue type names using the REST API";
+  name = "Explotacion!";
+
+
+  cuerpoTicket: Ticket = {
+    fields: {
+       project: 
+       {
+          key: "SIT"
+       },
+       summary: "Dale calor",
+       description: "Creating of an issue using project keys and issue type names using the REST API",
+       issuetype: {
+          name: "Explotacion!"
+       }
+   }
+}
+  options = { headers: { Authorization: `${localStorage.getItem('jwt_jira')}` } };
+
   
-  constructor(private api:ApibackendService) { }
+  constructor(private api:ApibackendService, private route:ActivatedRoute) { }
 
   
   logInJira(){
@@ -26,11 +51,24 @@ export class AddJiraTicketComponent implements OnInit {
       this.isLogged = true;
     })
   }
+
+  crearTicket(){
+    console.log('creo');
+    this.api.createTicket(this.cuerpoTicket).then((res)=>{
+      console.log(res);
+      alert('ticket added');
+      
+    }).catch(err=>{
+      console.log(err);
+    })
+    
+  }
   
   
   
   
   ngOnInit() {
+    this.id = Number(this.route.snapshot.paramMap.get('id'));
     this.api.getJiraInfo().then((res:any)=>{
       if(res !== null){
         this.jira= res;

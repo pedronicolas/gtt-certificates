@@ -40,3 +40,16 @@ export interface Certificates{
     ticket_creado:boolean;
    
 }
+
+export interface Ticket{
+    fields: {
+        project:{
+            key: string
+        },
+        summary:string,
+        description: string,
+        issuetype: {
+            name: string
+        }
+    }
+}
