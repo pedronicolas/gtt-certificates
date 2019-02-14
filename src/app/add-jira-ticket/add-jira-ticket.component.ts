@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ApibackendService } from '../apibackend.service';
 import { Jira, Ticket, Certificates } from '../model-data';
-import { RouterLinkActive, ActivatedRoute, Router } from '@angular/router';
 import { Base64 } from 'js-base64';
-import { routerNgProbeToken } from '@angular/router/src/router_module';
-import { Certificate } from 'crypto';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-jira-ticket',
