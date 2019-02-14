@@ -14,6 +14,11 @@ export class DetailsofcertComponent implements OnInit {
   certificado:Certificates;
   constructor(private route: ActivatedRoute, public apiD:ApibackendService) { }
 
+  download(){
+    this.apiD.download(this.certificado);
+   }
+
+
   ngOnInit() {
     this.id = Number(this.route.snapshot.paramMap.get('id'));
       this.apiD.getCert(this.id).then((res:Certificates)=>{

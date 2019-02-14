@@ -28,43 +28,12 @@ export class EditCertificateComponent implements OnInit {
     })
   }
 
-  obtainCert(event) {
-    let cert:Certificates ={
-      id: this.id,
-      alias:this.alias,
-      entidadEmisora:"",
-      numeroSerie:"",
-      subject:"",
-      fechaCaducidad:new Date(),
-      password:this.password,
-      idOrga:+this.idorga,
-      nombreCliente:this.idorga,
-      listaIntegraciones:this.integrations,
-      email:this.contact,
-      observaciones:this.observations,
-      eliminado:false,
-      repositorio:this.repository,
-      fichero64:"",
-      nombreArchivo: event.target.value.split("\\")[2],
-      caducado:false,
-      ticket_creado:false
-    }
-    
-    
-    
-    
-    var reader = new FileReader();
-    var arrayBuffer;
-    let gtt_aux = this.api;
-    reader.onload = function(){
-      arrayBuffer = reader.result;
-      var arrayBuffer2 = arrayBuffer.split(',');
-      gtt_aux.modifyCertificate(arrayBuffer2[1],cert)
+  modifyCert() {
+   this.api.modifyCertificate(this.certIni.fichero64,this.certIni)
           .then(()=>{
             alert('Certificado modificado');
           }).catch(console.error);
-    };
-    reader.readAsDataURL(event.target.files[0]);
   }
-
 }
+
+

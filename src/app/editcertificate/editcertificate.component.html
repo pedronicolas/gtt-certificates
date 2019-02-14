@@ -6,13 +6,12 @@
 <form *ngIf="certIni">
     
     <input type="text" name="certIni.alias" placeholder="Alias" [(ngModel)]="certIni.alias">
-    <input type="password" name="certIni.pass" placeholder="Contraseña" [(ngModel)]="certIni.password">
     <input type="text" name="certIni.idOrga" placeholder="Nombre Cliente/Id Organización" [(ngModel)]="certIni.idOrga">
     <input type="text" name="certIni.email" placeholder="E-mail Contacto" [(ngModel)]="certIni.email">
     <input type="text" name="certIni.repositorio" placeholder="Repositorio" [(ngModel)]="certIni.repositorio">
     <textarea id="obs" type="certIni.text" name="integrations" placeholder="Integraciones" [(ngModel)]="certIni.listaIntegraciones"></textarea>
     <textarea id="obs" type="certIni.text" name="observations" placeholder="Observaciones" [(ngModel)]="certIni.observaciones"></textarea>
-    <input (change)="obtainCert($event)" type="file" accept=".p12,.pfx">
+    <button (click)="modifyCert()">Cambiar Iformación</button>
 </form>
 </div>
 </div>
