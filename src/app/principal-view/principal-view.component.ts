@@ -25,18 +25,10 @@ export class PrincipalViewComponent implements OnInit {
 
   getCertificates(){
     this.api.getCertificates().then((res:any)=>{
-      this.certificates = res;
-      this.certificates.forEach(cert => {
-        if(cert.caducado === true && cert.ticket_creado === false){
-          console.log('caducado');
-          var r = confirm('Certificado caducado, ¿quieres renovarlo?');
-          if(r===true){
-            this.router.navigate([`addJiraTicket/${cert.id}`]);
-          }
-        }
-      });
+      if(res !=null){
+        this.certificates = res;
+      } 
       
-
     }).catch((err:any)=>{
       console.log(err);
     })

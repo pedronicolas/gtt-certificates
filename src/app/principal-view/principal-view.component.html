@@ -31,7 +31,8 @@
     </div>
     
         <div id="botones" class="unic">
-        <button *ngIf="role ==='0'" routerLink="/certificatechange/{{certificados.id}}">👨‍🔧</button>
+        <button *ngIf="role ==='0'" routerLink="/certificatechange/{{certificados.id}}">✅</button>
+        <button *ngIf="certificados.caducado ===true" routerLink = "/addJiraTicket/{{certificados.id}}">👨‍🔧</button>
         <button routerLink="/certificate/{{certificados.id}}">📑</button>
         <button (click)="download(certificados)">💾</button>
         </div>

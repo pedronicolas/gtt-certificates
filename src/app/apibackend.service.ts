@@ -21,7 +21,7 @@ export class ApibackendService {
   }};
   headerJiraJ = { headers: {
     'User-Agent': "xx",
-    'Authorization' : `${localStorage.getItem('jwt_jira').trim()}`,
+    'Authorization' : `${localStorage.getItem('jwt_jira')}`,
     'Content-Type': 'application/json'
   }};;
   options = { headers: { Authorization: `${this.jwt}` } };
