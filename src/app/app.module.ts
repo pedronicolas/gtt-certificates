@@ -14,7 +14,6 @@ import { OptionsComponent } from './options/options.component';
 import { AddfilesComponent } from './addfiles/addfiles.component';
 import { AngularFileUploaderModule } from "angular-file-uploader";
 import { DetailsofcertComponent } from './detailsofcert/detailsofcert.component';
-import { RenovateCertificatesComponent } from './renovate-certificates/renovate-certificates.component';
 import { EditCertificateComponent } from './editcertificate/editcertificate.component';
 import { AddJiraTicketComponent } from './add-jira-ticket/add-jira-ticket.component';
  
@@ -30,7 +29,6 @@ import { AddJiraTicketComponent } from './add-jira-ticket/add-jira-ticket.compon
     OptionsComponent,
     AddfilesComponent,
     DetailsofcertComponent,
-    RenovateCertificatesComponent,
     EditCertificateComponent,
     AddJiraTicketComponent
   ],

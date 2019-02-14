@@ -19,11 +19,7 @@ export class ApibackendService {
   headerJira = { headers: {
     "User-Agent": "xx"
   }};
-  headerJiraJ = { headers: {
-    'User-Agent': "xx",
-    'Authorization' : `${localStorage.getItem('jwt_jira')}`,
-    'Content-Type': 'application/json'
-  }};;
+  
   options = { headers: { Authorization: `${this.jwt}` } };
 
 
@@ -84,9 +80,7 @@ export class ApibackendService {
     return this.http.post(this.certificates,cert,this.options).toPromise();
    }
 
-   getCert(idCert:number){
-    console.log(this.certs + idCert);
-     
+   getCert(idCert:number){     
     return this.http.get(this.certs +'/'+ idCert,this.options).toPromise();
    }
 
@@ -100,12 +94,10 @@ export class ApibackendService {
   }  
 
   loginJira(username,password){   
-    console.log(username + '' + password);
-     
     return this.http.post(this.credentialsLoginjira,{username,password},this.headerJira).toPromise();
   }
-  createTicket(cuerpo:Ticket){
-    console.log(this.headerJira);
-    return this.http.post('rest/api/2/issue',cuerpo,this.headerJiraJ).toPromise();
+  createTicket(cuerpo:Ticket,options){
+    
+    return this.http.post('rest/api/2/issue/',cuerpo,options).toPromise();
   }
 }

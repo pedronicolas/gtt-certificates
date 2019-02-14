@@ -6,7 +6,6 @@ import { PrincipalViewComponent } from './principal-view/principal-view.componen
 import { OptionsComponent } from './options/options.component';
 import { AddfilesComponent } from './addfiles/addfiles.component';
 import{DetailsofcertComponent} from './detailsofcert/detailsofcert.component';
-import { RenovateCertificatesComponent } from './renovate-certificates/renovate-certificates.component';
 import { EditCertificateComponent } from './editcertificate/editcertificate.component';
 import { AddJiraTicketComponent } from './add-jira-ticket/add-jira-ticket.component';
 
@@ -19,10 +18,7 @@ const routes: Routes = [{
   path: 'register',
   component: RegisterViewComponent
 },
-{
-  path: 'renovate',
-  component: RenovateCertificatesComponent
-},
+
 {
   path: 'options',
   component: OptionsComponent
@@ -33,7 +29,7 @@ const routes: Routes = [{
 
 },
 {
-  path:'addJiraTicket/:id}',
+  path:'addJiraTicket/:id',
   component: AddJiraTicketComponent
 },
 {

@@ -1,8 +1,5 @@
 <navbarprincipal></navbarprincipal>
- <div class="filtro">
-     <p>Filtra entre tus certificados:</p>
-    <input type="text" placeholder="Filtra tu búsqueda...">  
- </div> 
+  
 
  <div class="certificados">
    
@@ -16,7 +13,7 @@
 
 <div class="certificados-body">
  <div class="certificados-item" *ngFor="let certificados of certificates">
-    <div class="unic {{certificados.eliminado?'eliminado':'' }}">
+    <div class="unic {{certificados.caducado?'caducado':'' }}">
         {{certificados.alias}}
     </div>
 
@@ -32,7 +29,7 @@
     
         <div id="botones" class="unic">
         <button *ngIf="role ==='0'" routerLink="/certificatechange/{{certificados.id}}">✅</button>
-        <button *ngIf="certificados.caducado ===true" routerLink = "/addJiraTicket/{{certificados.id}}">👨‍🔧</button>
+        <button *ngIf="certificados.ticket_creado===false && certificados.caducado === true" routerLink = "/addJiraTicket/{{certificados.id}}">👨‍🔧</button>
         <button routerLink="/certificate/{{certificados.id}}">📑</button>
         <button (click)="download(certificados)">💾</button>
         </div>

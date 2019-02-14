@@ -17,12 +17,15 @@ export class EditCertificateComponent implements OnInit {
  repository;
  integrations;
  observations;
- cert:Certificates;
+ certIni:Certificates;
  
   constructor(private route:ActivatedRoute, private api:ApibackendService) { }
 
   ngOnInit() {
     this.id = Number(this.route.snapshot.paramMap.get('id'));
+    this.api.getCert(this.id).then((res:Certificates)=>{
+      this.certIni = res;
+    })
   }
 
   obtainCert(event) {
