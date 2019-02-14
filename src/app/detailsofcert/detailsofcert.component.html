@@ -75,6 +75,6 @@
 </div>
 
 <div class="Botones">
-  <button routerLink="/certificatechange/{{certificado.id}}">Editar Información </button>
+  <button *ngIf="rol==='0'" routerLink="/certificatechange/{{certificado.id}}">Editar Información </button>
   <button (click)="download()">Descargar Certificado</button>
 </div>

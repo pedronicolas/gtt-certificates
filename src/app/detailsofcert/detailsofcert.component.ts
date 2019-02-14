@@ -12,6 +12,7 @@ import { Certificates } from '../model-data';
 export class DetailsofcertComponent implements OnInit {
   id:number;
   certificado:Certificates;
+  rol = localStorage.getItem('rol');
   constructor(private route: ActivatedRoute, public apiD:ApibackendService) { }
 
   download(){
