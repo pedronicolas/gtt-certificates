@@ -20,6 +20,7 @@ export class LoginViewComponent implements OnInit{
 
   login(){
     const {username,password} = this;
+    if(this.username !== undefined && this.password != undefined){
     if(username.trim() !== '' && password.trim() !==''){
       this.api.login(username.trim(),password.trim())
       .then((response:any)=>{
@@ -39,6 +40,9 @@ export class LoginViewComponent implements OnInit{
       })
       .catch(console.log);
     }
+  } else{
+    alert('El usuario o la contraseña están vacíos');
+  }
   }
 
   ngOnInit(){

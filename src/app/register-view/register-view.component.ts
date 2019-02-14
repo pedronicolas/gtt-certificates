@@ -18,23 +18,26 @@ export class RegisterViewComponent implements OnInit {
   constructor(private api: ApibackendService, private router:Router ) { }
 
   register(){
-    const {username,password,rol} = this;
-     if(username.trim()!== '' && password.trim()!==''){
-       this.api.register(username.trim(),password.trim(),this.rol)
-       .then((res:any)=>{
-         this.valid = res;
-         this.correct = res.comment; 
-         
-         })
-       .catch(error=>{
-         this.error = error;
-         console.log(error);
-         
-       })
-     } else{
-       console.error('error');
-       
-     }
+    if(this.username !== undefined && this.password !== undefined){const {username,password,rol} = this;
+    if(username.trim()!== '' && password.trim()!==''){
+      this.api.register(username.trim(),password.trim(),this.rol)
+      .then((res:any)=>{
+        this.valid = res;
+        this.correct = res.comment; 
+        
+        })
+      .catch(error=>{
+        this.error = error;
+        console.log(error);
+        
+      })
+    } else{
+      console.error('error');
+      
+    }}else{
+      alert('El usuario o la contraseña están vacíos');
+    }
+    
    }
    ngOnInit(){
     this.api.isLogged(); 
