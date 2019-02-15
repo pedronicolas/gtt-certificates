@@ -46,6 +46,7 @@ div#botones{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    height: 4.5em;
     button{
         all: unset;
         margin: 1em;
@@ -89,3 +90,6 @@ div#botones{
 
 }
 
+#tamanyoAdapted{
+    height: 4.5em;
+}

@@ -24,8 +24,6 @@ export class LoginViewComponent implements OnInit{
     if(username.trim() !== '' && password.trim() !==''){
       this.api.login(username.trim(),password.trim())
       .then((response:any)=>{
-        console.log(response);
-        console.log(this.comment);
         if(response.status===204){ 
         this.comment = response.comment;
         } else{
@@ -47,6 +45,8 @@ export class LoginViewComponent implements OnInit{
 
   ngOnInit(){
     this.api.isLogged();
+    this.api.getUsers().then(res=>{
+    })
   }
   
 }

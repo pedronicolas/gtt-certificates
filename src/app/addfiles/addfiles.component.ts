@@ -58,7 +58,9 @@ export class AddfilesComponent implements OnInit {
         gtt_aux.addCertificate(arrayBuffer2[1],cert)
             .then(()=>{
               alert('Certificado añadido');
-            }).catch(console.error);
+            }).catch(err=>{
+              alert(err);
+            });
       };
       reader.readAsDataURL(event.target.files[0]);
    

@@ -12,18 +12,18 @@
  </div>
 
 <div class="certificados-body">
- <div class="certificados-item" *ngFor="let certificados of certificates">
-    <div class="unic {{certificados.caducado?'caducado':'' }}">
+ <div class="certificados-item" *ngFor="let certificados of certificates" >
+    <div class="unic {{certificados.caducado?'caducado':'' }}" id="tamanyoAdapted">
         {{certificados.alias}}
     </div>
 
-    <div class="unic">
+    <div class="unic"id="tamanyoAdapted">
         {{certificados.subject.split('CN=')[1].split(',')[0] }}
     </div>
-    <div class="unic">
+    <div class="unic"id="tamanyoAdapted">
         {{certificados.fechaCaducidad}}
     </div>
-    <div class="unic">
+    <div class="unic"id="tamanyoAdapted">
         {{certificados.nombreCliente}}
     </div>
     

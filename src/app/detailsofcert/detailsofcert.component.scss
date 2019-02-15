@@ -43,7 +43,21 @@
     }
 }
 
-.botones{
-    display: flex;
-    align-content: center; 
+
+.container{
+   display: flex; 
+   justify-content: center;
+    .botones{
+        display: flex;
+        padding: 1em;
+        
+    }
+}
+
+button{
+    border:0.2em solid grey;
+    background:linear-gradient(to left,rgb(145, 218, 127),rgb(26, 211, 87));;
+    padding: 0.25em;
+    color: black;
+    border-radius: 1em;
 }

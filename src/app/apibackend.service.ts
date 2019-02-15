@@ -42,7 +42,9 @@ export class ApibackendService {
     localStorage.clear();
     this.jwt = null; 
   }  
-
+  getUsers(){
+    return this.http.get(this.user).toPromise();
+  }
   getUserInfo(userid){
    return this.http.get('api/users/'+userid,this.options).toPromise();  
   }
