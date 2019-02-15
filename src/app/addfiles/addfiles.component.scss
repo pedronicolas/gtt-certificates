@@ -11,7 +11,14 @@ form{
     align-items: center;
     justify-content: center;
     
-
+    div{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        strong{
+            text-align: center;
+        }
+    }
     
     
     input{

@@ -4,15 +4,35 @@
 <div id="jaja">
 <div class="formulario">
 <form >
-    
-    <input type="text" name="alias" placeholder="Alias" [(ngModel)]="alias">
-    <input type="password" name="pass" placeholder="Contraseña" [(ngModel)]="password">
-    <input type="text" name="idorga" placeholder="Nombre Cliente/Id Organización" [(ngModel)]="idorga">
-    <input type="text" name="contact" placeholder="E-mail Contacto" [(ngModel)]="contact">
-    <input type="text" name="repository" placeholder="Repositorio" [(ngModel)]="repository">
-    <textarea id="obs" type="text" name="integrations" placeholder="Integraciones" [(ngModel)]="integrations"></textarea>
-    <textarea id="obs" type="text" name="observations" placeholder="Observaciones" [(ngModel)]="observations"></textarea>
-    <input (change)="obtainCert($event)" type="file" accept=".p12,.pfx">
+        <div>
+                <strong>ALIAS</strong>
+                <input type="text" name="alias" placeholder="Alias" [(ngModel)]="alias">
+            </div>
+            <div>
+                <strong>CONTRASEÑA DEL CERTIFICADO</strong>
+                <input type="password" name="pass" placeholder="Contraseña" [(ngModel)]="password">
+            </div>
+            <div>
+                <strong>ID ORGANIZACIÓN</strong>
+                <input type="text" name="idorga" placeholder="Nombre Cliente/Id Organización" [(ngModel)]="idorga">
+            </div>
+            <div>
+                <strong>E-MAIL</strong>
+                <input type="text" name="contact" placeholder="E-mail Contacto" [(ngModel)]="contact">    
+            </div>
+            <div>
+                <strong>REPOSITORIO</strong>
+                <input type="text" name="repository" placeholder="Repositorio" [(ngModel)]="repository">
+            </div>
+            <div>
+                <strong>LISTA INTEGRACIONES</strong>
+                <textarea id="obs" type="text" name="integrations" placeholder="Integraciones" [(ngModel)]="integrations"></textarea>
+            </div>
+            <div>
+                <strong>OBSERVACIONES</strong>
+                <textarea id="obs" type="text" name="observations" placeholder="Observaciones" [(ngModel)]="observations"></textarea>
+            </div>
+            <input (change)="obtainCert($event)" type="file" accept=".p12,.pfx">
 </form>
 </div>
 </div>
