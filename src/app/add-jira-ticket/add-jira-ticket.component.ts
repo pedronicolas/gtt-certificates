@@ -51,7 +51,7 @@ export class AddJiraTicketComponent implements OnInit {
     let options = { headers: { "Authorization": `Basic ${objJsonB64}`,'User-Agent': "xx" } };
     
 
-    this.cuerpoTicket.fields.description="ISSUE IN CERT ALIAS:"+this.observations;
+    this.cuerpoTicket.fields.description = this.observations;
     this.cuerpoTicket.fields.summary = "ISSUE IN CERT ALIAS: " + this.certificado.alias;
 
     this.api.createTicket(this.cuerpoTicket,options).then((res)=>{

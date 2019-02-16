@@ -98,4 +98,5 @@ export class PrincipalViewComponent implements OnInit {
       return 0;
     })
   }
+
 }
