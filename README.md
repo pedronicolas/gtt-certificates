@@ -37,5 +37,5 @@ En la primera versión(v1), subida para la entrega en la empresa, la app contien
  - Generar incidencia en Jira: Cuando caduque un certificado, este módulo nos permite crear una incidencia en Jira. Primeramente,el usuario tendrá que hacer loggin en jira introduciendo su contraseña y luego podrá introducir la descripción, el único campo que podrá modificar el usuario.
  
  ## Conexión con otros componentes
-Este front en Angular, está conectado a un BackEnd en c#, para acceder al repositorio y poder conectarlos, aquí te dejo el repositorio. Gracias por tu atención y espero que lo disfrutes. LET'S CODE.
+Este front en Angular, está conectado a un BackEnd en c#. Para acceder al repositorio y poder conectarlos, aquí te dejo el enlace. Gracias por tu atención y espero que lo disfrutes. LET'S CODE.
  https://github.com/pedronicolas/gtt-backend-csharp
