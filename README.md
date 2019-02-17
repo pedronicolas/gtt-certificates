@@ -12,7 +12,7 @@ Ejecuta `ng generate component component-name` para generar un nuevo componente 
 
 ## Funcionalidades
 
-En la primera versión(v1), subida para la entrega en la empresa, la app contiene las siguientes funcionalidades:
+En la primera versión (v1), subida para la entrega en la empresa, la app contiene las siguientes funcionalidades:
   -  
  - Login: Login con usuario y contraseña, no se usa correo.
  
