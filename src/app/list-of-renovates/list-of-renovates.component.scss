@@ -1,0 +1,23 @@
+h2{
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 2em;
+    background: linear-gradient(to left,rgb(145, 218, 127),rgb(26, 211, 87))
+}
+
+
+.container{
+    display: flex;
+    flex-direction: row;
+    .element{
+        display: flex;
+        flex-direction: column;
+        background: white;
+        border-radius: 1em;
+        padding: 2em;
+        margin: 1em;
+        justify-content: center;
+        align-items: center;
+     
+    }
+}

@@ -94,3 +94,14 @@ div#botones{
     height: 4.5em;
     justify-content: center;
 }
+
+.button-renovate{
+    margin: 1em;
+    button{
+        all: unset;
+        border: 2px solid black;
+        border-radius: 2em;
+        background: linear-gradient(to right,rgb(10, 133, 47),rgb(117, 238, 117));
+        padding: 0.25em;
+    }
+}

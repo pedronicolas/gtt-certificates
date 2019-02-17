@@ -16,6 +16,7 @@ import { AngularFileUploaderModule } from "angular-file-uploader";
 import { DetailsofcertComponent } from './detailsofcert/detailsofcert.component';
 import { EditCertificateComponent } from './editcertificate/editcertificate.component';
 import { AddJiraTicketComponent } from './add-jira-ticket/add-jira-ticket.component';
+import { ListOfRenovatesComponent } from './list-of-renovates/list-of-renovates.component';
  
 
 @NgModule({
@@ -30,7 +31,8 @@ import { AddJiraTicketComponent } from './add-jira-ticket/add-jira-ticket.compon
     AddfilesComponent,
     DetailsofcertComponent,
     EditCertificateComponent,
-    AddJiraTicketComponent
+    AddJiraTicketComponent,
+    ListOfRenovatesComponent
   ],
   imports: [
     BrowserModule,

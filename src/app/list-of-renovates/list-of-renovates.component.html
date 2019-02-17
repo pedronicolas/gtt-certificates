@@ -1,0 +1,13 @@
+<navbarprincipal></navbarprincipal>
+
+<h2>CERTIFICADOS CADUCADOS Y NO REFERENCIADOS</h2>
+
+<div class="container">
+    <div class="element" *ngFor="let filtereds of filtered">
+        <div>{{filtereds.alias}}</div>
+        <div>{{filtereds.subject.split('CN=')[1].split(',')[0] }}</div>
+        <div>{{filtereds.fechaCaducidad}}</div> 
+        <div>{{filtereds.nombreCliente}}</div>
+        <button routerLink = "/addJiraTicket/{{filtereds.id}}">Crear Ticket Jira</button>
+     </div>
+</div>

@@ -4,6 +4,7 @@ import { LoginViewComponent } from '../login-view/login-view.component';
 import { forEach } from '@angular/router/src/utils/collection';
 import { Certificates } from '../model-data';
 import { Router } from '@angular/router';
+import { elementContainerEnd } from '@angular/core/src/render3';
 
 @Component({
   selector: 'app-principal-view',
@@ -23,10 +24,29 @@ export class PrincipalViewComponent implements OnInit {
     this.api.getUserInfo(this.idUser);
   }
 
+  someToRenovate(certs:Array<Certificates>){
+    let contador = 0;
+    certs.forEach(element => {
+      if(element.caducado === true && element.ticket_creado === false){
+        contador++;
+      }
+    }); 
+    if(contador >= 1){
+      return true;
+    } else{
+      return false;
+    }
+    
+  }
+
   getCertificates(){
     this.api.getCertificates().then((res:any)=>{
       if(res !=null){
         this.certificates = res;
+        if(this.someToRenovate(this.certificates)===true){
+          alert('Hay certificados caducados, pulsa el botón en el menú para comprobarlos');
+        }
+        
       } 
       
     }).catch((err:any)=>{

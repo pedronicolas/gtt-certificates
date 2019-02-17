@@ -8,6 +8,7 @@ import { AddfilesComponent } from './addfiles/addfiles.component';
 import{DetailsofcertComponent} from './detailsofcert/detailsofcert.component';
 import { EditCertificateComponent } from './editcertificate/editcertificate.component';
 import { AddJiraTicketComponent } from './add-jira-ticket/add-jira-ticket.component';
+import { ListOfRenovatesComponent } from './list-of-renovates/list-of-renovates.component';
 
 
 const routes: Routes = [{
@@ -36,6 +37,10 @@ const routes: Routes = [{
   path: 'certificatechange/:id',
   component: EditCertificateComponent
 
+},
+{
+  path: 'certificatestorenovate',
+  component: ListOfRenovatesComponent
 },
 {
   path: '', 
