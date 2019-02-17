@@ -18,7 +18,8 @@ export class RegisterViewComponent implements OnInit {
   constructor(private api: ApibackendService, private router:Router ) { }
 
   register(){
-    if(this.username !== undefined && this.password !== undefined){const {username,password,rol} = this;
+    if(this.username !== undefined && this.password !== undefined)
+    {const {username,password,rol} = this;
     if(username.trim()!== '' && password.trim()!==''){
       this.api.register(username.trim(),password.trim(),this.rol)
       .then((res:any)=>{

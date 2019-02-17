@@ -14,8 +14,7 @@ export class AddJiraTicketComponent implements OnInit {
   jira:Jira;
   password:string;
   isLogged:boolean = false;
-  headerJiraAuth:string;
-  certificado;
+  certificado:Certificates;
   observations: string;
 
 

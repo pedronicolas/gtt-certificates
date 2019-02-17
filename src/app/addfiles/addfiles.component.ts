@@ -9,13 +9,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./addfiles.component.scss']
 })
 export class AddfilesComponent implements OnInit {
-  alias;
-  password;
-  idorga;
-  contact;
-  repository;
-  integrations;
-  observations;
+  alias:string;
+  password:string;
+  idorga:string;
+  contact:string;
+  repository:string;
+  integrations:string;
+  observations:string;
   
   
   constructor(private api: ApibackendService, private rou: Router) { }
@@ -61,7 +61,7 @@ export class AddfilesComponent implements OnInit {
               alert('Certificado añadido');
             }).catch(err=>{
               alert('Algún campo introducido no es correcto');
-                
+
              
             });
       };

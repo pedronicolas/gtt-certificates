@@ -56,23 +56,7 @@ export class PrincipalViewComponent implements OnInit {
 
 
    download(cert:any){
-    let certificateType= cert.nombreArchivo.split('.')[1]; 
-    var contentType = "file/"+certificateType;
-     var byteCharacters = atob(cert.fichero64);
-     var byteNumbers = new Array(byteCharacters.length);
-
-     for (var i = 0; i < byteCharacters.length; i++) {
-       byteNumbers[i] = byteCharacters.charCodeAt(i);
-     }
-     var byteArray = new Uint8Array(byteNumbers);
-     var blob = new Blob([byteArray], {
-       type: contentType
-     });
-     var aux_document = document.createElement("a");
-     aux_document.href = URL.createObjectURL(blob);
-     aux_document.download = `${cert.nombreArchivo}`;
-     document.body.appendChild(aux_document);
-     aux_document.click()
+    this.api.download(cert);
    }
 
 
