@@ -46,6 +46,7 @@ export class OptionsComponent implements OnInit {
 
   modifyUserJiraInfo(){
     
+  if(this.username !== '' && this.pass !== ''){
     if(this.username.trim() !== '' && this.pass.trim() !=''){
     this.jira = {
       username: this.usernamejira,
@@ -64,10 +65,11 @@ export class OptionsComponent implements OnInit {
       console.log(err);
       
     })
+    }
+  } else{
+    alert('Los campos no pueden estar vacíos.');
   }
-  else{
-    alert('el usuario o la contraseña no pueden ser vacios');
-  }
+  
   }
   
   

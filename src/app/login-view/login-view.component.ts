@@ -20,7 +20,7 @@ export class LoginViewComponent implements OnInit{
 
   login(){
     const {username,password} = this;
-    if(this.api.isNotUndefined(username,password) === true){
+    if(this.username !== undefined && this.password !== undefined){
     if(username.trim() !== '' && password.trim() !==''){
       this.api.login(username.trim(),password.trim())
       .then((response:any)=>{
