@@ -29,10 +29,14 @@ export class EditCertificateComponent implements OnInit {
   }
 
   modifyCert() {
-   this.api.modifyCertificate(this.certIni.fichero64,this.certIni)
+   if(this.api.isNotUndefined(this.alias,this.password,this.idorga,this.contact,this.repository,this.integrations,this.observations)===true){
+    this.api.modifyCertificate(this.certIni.fichero64,this.certIni)
           .then(()=>{
             alert('Certificado modificado');
           }).catch(console.error);
+  } else{
+    alert('Alguno de los campos se encuentra vacío.');
+  }
   }
 }
 

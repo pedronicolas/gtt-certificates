@@ -121,5 +121,13 @@ export class ApibackendService {
      aux_document.download = `${cert.nombreArchivo}`;
      document.body.appendChild(aux_document);
      aux_document.click()
-   }
+  }
+
+
+  isNotUndefined(...args){
+    if(args.values !== undefined ){
+      return true;
+    }
+    return false;
+  }
 }

@@ -4,9 +4,13 @@
 
 <div class="container">
     <div class="element" *ngFor="let filtereds of filtered">
+        <div class="tittle"><strong>ALIAS</strong></div>
         <div>{{filtereds.alias}}</div>
+        <div class="tittle"><strong>SUJETO</strong></div>
         <div>{{filtereds.subject.split('CN=')[1].split(',')[0] }}</div>
+        <div class="tittle"><strong>FECHA CADUCIDAD</strong></div>
         <div>{{filtereds.fechaCaducidad}}</div> 
+        <div class="tittle"><strong>NOMBRE CLIENTE</strong></div>
         <div>{{filtereds.nombreCliente}}</div>
         <button routerLink = "/addJiraTicket/{{filtereds.id}}">Crear Ticket Jira</button>
      </div>

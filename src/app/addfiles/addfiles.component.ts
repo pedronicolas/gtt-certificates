@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApibackendService } from '../apibackend.service';
 import {Certificates} from '../model-data';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-addfiles',
@@ -17,7 +18,7 @@ export class AddfilesComponent implements OnInit {
   observations;
   
   
-  constructor(private api: ApibackendService) { }
+  constructor(private api: ApibackendService, private rou: Router) { }
 
   ngOnInit() {
     this.api.isRoleZero();
@@ -59,7 +60,9 @@ export class AddfilesComponent implements OnInit {
             .then(()=>{
               alert('Certificado añadido');
             }).catch(err=>{
-              alert(err);
+              alert('Algún campo introducido no es correcto');
+                
+             
             });
       };
       reader.readAsDataURL(event.target.files[0]);
