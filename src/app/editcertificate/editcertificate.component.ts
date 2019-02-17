@@ -10,13 +10,6 @@ import { ApibackendService } from '../apibackend.service';
 })
 export class EditCertificateComponent implements OnInit {
  id:number;
- alias;
- password;
- idorga;
- contact;
- repository;
- integrations;
- observations;
  certIni:Certificates;
  
   constructor(private route:ActivatedRoute, private api:ApibackendService) { }
@@ -29,7 +22,7 @@ export class EditCertificateComponent implements OnInit {
   }
 
   modifyCert() {
-   if(this.api.isNotUndefined(this.alias,this.password,this.idorga,this.contact,this.repository,this.integrations,this.observations)===true){
+   if(this.certIni.alias !== '' && this.certIni.idOrga !== null && this.certIni.email !== '' && this.certIni.entidadEmisora !== '' && this.certIni.listaIntegraciones !== null ){
     this.api.modifyCertificate(this.certIni.fichero64,this.certIni)
           .then(()=>{
             alert('Certificado modificado');

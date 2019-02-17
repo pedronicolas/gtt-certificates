@@ -38,15 +38,20 @@ export class AddJiraTicketComponent implements OnInit {
   
   logInJira(){
     
-    
+    if(this.password !== undefined){
     this.api.loginJira(this.jira.username,this.password).then((res:any)=>{
       
       localStorage.setItem('jwt_jira', res.session.value);
       this.isLogged = true;
     })
+  } else{
+    alert('Introduce una contraseña');
+  }
   }
 
   crearTicket(){
+    if(this.observations !== undefined){
+    
     let objJsonB64 = Base64.encode(this.jira.username+":"+this.password);
     let options = { headers: { "Authorization": `Basic ${objJsonB64}`,'User-Agent': "xx" } };
     
@@ -65,6 +70,9 @@ export class AddJiraTicketComponent implements OnInit {
     }).catch(err=>{
       console.log(err);
     })
+  }else{
+    alert('Introduce una Descripción para el Ticket');
+  }
     
   }
   
