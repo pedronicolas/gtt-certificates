@@ -21,13 +21,13 @@ export class DetailsofcertComponent implements OnInit {
 
 
    deleteCert(certificadoId){
-    console.log(certificadoId);
-    
     this.apiD.deleteCert(certificadoId).then(()=>{
       alert('Certificado Eliminado');
       this.router.navigate(['/home']);
     })
   }
+
+
   ngOnInit() {
     this.id = Number(this.route.snapshot.paramMap.get('id'));
       this.apiD.getCert(this.id).then((res:Certificates)=>{
