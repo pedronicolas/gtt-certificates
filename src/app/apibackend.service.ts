@@ -130,4 +130,8 @@ export class ApibackendService {
     }
     return false;
   }
+
+  deleteCert(certificadoId){
+    return this.http.delete(this.certificates + '/'+ certificadoId).toPromise();
+  }
 }

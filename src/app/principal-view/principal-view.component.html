@@ -35,6 +35,7 @@
         <button *ngIf="certificados.ticket_creado===false && certificados.caducado === true" routerLink = "/addJiraTicket/{{certificados.id}}">👨‍🔧</button>
         <button routerLink="/certificate/{{certificados.id}}">📑</button>
         <button (click)="download(certificados)">💾</button>
+        
         </div>
     </div>
 </div>

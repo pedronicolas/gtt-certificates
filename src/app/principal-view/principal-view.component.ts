@@ -5,6 +5,7 @@ import { forEach } from '@angular/router/src/utils/collection';
 import { Certificates } from '../model-data';
 import { Router } from '@angular/router';
 import { elementContainerEnd } from '@angular/core/src/render3';
+import { $$ } from 'protractor';
 
 @Component({
   selector: 'app-principal-view',
@@ -103,4 +104,5 @@ export class PrincipalViewComponent implements OnInit {
     })
   }
 
+  
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApibackendService } from '../apibackend.service';
 import { Certificates } from '../model-data';
 
@@ -13,13 +13,21 @@ export class DetailsofcertComponent implements OnInit {
   id:number;
   certificado:Certificates;
   rol = localStorage.getItem('rol');
-  constructor(private route: ActivatedRoute, public apiD:ApibackendService) { }
+  constructor(private route: ActivatedRoute, public apiD:ApibackendService, private router:Router) { }
 
   download(){
     this.apiD.download(this.certificado);
    }
 
 
+   deleteCert(certificadoId){
+    console.log(certificadoId);
+    
+    this.apiD.deleteCert(certificadoId).then(()=>{
+      alert('Certificado Eliminado');
+      this.router.navigate(['/home']);
+    })
+  }
   ngOnInit() {
     this.id = Number(this.route.snapshot.paramMap.get('id'));
       this.apiD.getCert(this.id).then((res:Certificates)=>{
