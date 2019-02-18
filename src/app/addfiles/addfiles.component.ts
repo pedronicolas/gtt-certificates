@@ -25,7 +25,7 @@ export class AddfilesComponent implements OnInit {
   }
 
   obtainCert(event) {
-    if(this.alias != undefined && this.password != undefined && this.idorga != null){
+    if(this.alias!==undefined && this.contact !== undefined && this.repository !== undefined && this.observations !== undefined){
       let cert:Certificates ={
         id: undefined,
         alias:this.alias,
@@ -67,9 +67,10 @@ export class AddfilesComponent implements OnInit {
       };
       reader.readAsDataURL(event.target.files[0]);
    
-    } else{
-      alert('Comprueba que todos los campos están rellenados');
-    }
+    
+  } else{
+    alert('Alguno de los campos se encuentra vacío');
   }
+}
 
 }
