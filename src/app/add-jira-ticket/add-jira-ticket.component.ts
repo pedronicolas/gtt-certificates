@@ -56,7 +56,7 @@ export class AddJiraTicketComponent implements OnInit {
     
 
     this.cuerpoTicket.fields.description = this.observations;
-    this.cuerpoTicket.fields.summary = "ISSUE IN CERT ALIAS: " + this.certificado.alias;
+    this.cuerpoTicket.fields.summary = "ISSUE IN CERT WITH ALIAS: " + this.certificado.alias;
 
     this.api.createTicket(this.cuerpoTicket,options).then((res)=>{
       alert('Ticket Añadido');
